@@ -10,7 +10,7 @@
   "stars": {
     "total": 15
   },
-  "updatedAt": "2026-10-14T00:33:42Z",
+  "updatedAt": "2026-10-14T00:44:16Z",
   "packages": [
     {
       "name": "lab123/lumen-notification",
@@ -81,6 +81,13 @@
   ],
   "repos": [
     {
+      "name": "jeanpfs.github.io",
+      "desc": "Homepage",
+      "stars": 0,
+      "pushed": "2026-10-14",
+      "url": "https://github.com/jeanpfs/jeanpfs.github.io"
+    },
+    {
       "name": "stock-images-mcp",
       "desc": "MCP server to search and download stock images from Pexels, Unsplash, and Pixabay",
       "stars": 4,
@@ -100,13 +107,6 @@
       "stars": 0,
       "pushed": "2026-10-05",
       "url": "https://github.com/jeanpfs/xd-extract"
-    },
-    {
-      "name": "codesearch-bench",
-      "desc": "Benchmark harness for comparing repository indexers and code-intelligence tools.",
-      "stars": 0,
-      "pushed": "2026-06-11",
-      "url": "https://github.com/jeanpfs/codesearch-bench"
     }
   ],
   "history": {

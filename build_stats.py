@@ -89,13 +89,35 @@ for u in GH_USERS:
     repos += [r for r in pages(f"https://api.github.com/users/{u}/repos?type=owner", auth=True) if not r["fork"]]
 stars_total = sum(r["stargazers_count"] for r in repos)
 star_inc, star_history = collections.Counter(), None
-if TOKEN:
+
+
+def stars_from_previous(path):
+    """Sem acesso aos stargazers (token da Action só vê este repo): reaproveita o
+    histórico gravado, atualizando o mês corrente (ou avançando uma posição na virada)."""
+    try:
+        prev = json.load(open(path))
+        hist = prev["history"]["stars"]
+        prev_month = prev["updatedAt"][:7]
+    except (OSError, KeyError, ValueError):
+        return None
+    steps = (NOW.year - int(prev_month[:4])) * 12 + NOW.month - int(prev_month[5:7])
+    hist = hist + [hist[-1]] * max(0, min(steps, 12))
+    hist = hist[-12:]
+    hist[-1] = stars_total
+    return hist
+
+
+try:
+    if not TOKEN:
+        raise PermissionError("sem token")
     for r in repos:
         if r["stargazers_count"]:
             for s in pages(f"https://api.github.com/repos/{r['full_name']}/stargazers",
                            accept="application/vnd.github.star+json", auth=True):
                 star_inc[s["starred_at"][:7]] += 1
     star_history = cumulative(stars_total, star_inc)
+except (PermissionError, urllib.error.HTTPError):
+    star_history = stars_from_previous(sys.argv[1] if len(sys.argv) > 1 else "stats.json")
 by_name = {r["name"]: r for r in repos}
 for p in npm_pkgs:  # stars do repo homônimo
     p["stars"] = by_name.get(p["name"].split("/")[-1], {}).get("stargazers_count", 0)
