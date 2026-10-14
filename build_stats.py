@@ -64,9 +64,15 @@ start = f"{MONTHS[0]}-01"
 for o in search["objects"]:
     name = o["package"]["name"]
     q = urllib.parse.quote(name, safe="")
-    last = get(f"https://api.npmjs.org/downloads/point/last-month/{q}")["downloads"]
-    total = get(f"https://api.npmjs.org/downloads/point/2015-01-01:{NOW:%Y-%m-%d}/{q}")["downloads"]
-    for d in get(f"https://api.npmjs.org/downloads/range/{start}:{NOW:%Y-%m-%d}/{q}")["downloads"]:
+    try:  # pacote recém-publicado: a API de downloads responde 404 até ter dados
+        last = get(f"https://api.npmjs.org/downloads/point/last-month/{q}")["downloads"]
+        total = get(f"https://api.npmjs.org/downloads/point/2015-01-01:{NOW:%Y-%m-%d}/{q}")["downloads"]
+        daily = get(f"https://api.npmjs.org/downloads/range/{start}:{NOW:%Y-%m-%d}/{q}")["downloads"]
+    except urllib.error.HTTPError as e:
+        if e.code != 404:
+            raise
+        last, total, daily = 0, 0, []
+    for d in daily:
         npm_inc[d["day"][:7]] += d["downloads"]
     npm_month += last
     npm_pkgs.append({"name": name, "desc": o["package"].get("description") or "", "registry": "npm",
@@ -142,8 +148,8 @@ for r in sorted(releases, key=lambda x: x["date"], reverse=True):
         seen.add(k)
         uniq.append(r)
 
-recent = sorted((r for r in repos if r["name"] not in GH_USERS and not r["archived"]),
-                key=lambda r: r["pushed_at"], reverse=True)[:4]
+recent = sorted((r for r in repos if r["name"] not in GH_USERS and not r["name"].endswith(".github.io")
+                 and not r["archived"]), key=lambda r: r["created_at"], reverse=True)[:6]
 
 out = {
     "npm": {"total": npm_total, "month": npm_month},
@@ -152,9 +158,9 @@ out = {
     "updatedAt": NOW.strftime("%Y-%m-%dT%H:%M:%SZ"),
     "packages": [p for p in sorted(npm_pkgs + comp_pkgs, key=lambda p: -p["downloads"])
                  if p["name"] not in HIDE and p["desc"]][:5],
-    "releases": uniq[:4],
+    "releases": uniq[:6],
     "repos": [{"name": r["name"], "desc": r["description"] or "", "stars": r["stargazers_count"],
-               "pushed": r["pushed_at"][:10], "url": r["html_url"]} for r in recent],
+               "created": r["created_at"][:10], "url": r["html_url"]} for r in recent],
     "history": {"npm": cumulative(npm_total, npm_inc)},
 }
 if star_history:

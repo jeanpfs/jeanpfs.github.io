@@ -10,7 +10,7 @@
   "stars": {
     "total": 15
   },
-  "updatedAt": "2026-10-14T00:44:58Z",
+  "updatedAt": "2026-10-14T15:24:21Z",
   "packages": [
     {
       "name": "lab123/lumen-notification",
@@ -50,63 +50,89 @@
       "registry": "npm",
       "downloads": 246,
       "stars": 0,
-      "version": "0.1.1"
+      "version": "0.2.1"
     }
   ],
   "releases": [
     {
-      "name": "stock-images-mcp",
-      "tag": "v2.0.0",
-      "date": "2026-10-06",
-      "url": "https://www.npmjs.com/package/stock-images-mcp/v/2.0.0"
+      "name": "xd-extract",
+      "tag": "v0.2.0",
+      "date": "2026-10-14",
+      "url": "https://www.npmjs.com/package/xd-extract/v/0.2.0"
     },
     {
       "name": "xd-extract",
-      "tag": "v0.1.0",
-      "date": "2026-10-05",
-      "url": "https://www.npmjs.com/package/xd-extract/v/0.1.0"
+      "tag": "v0.2.1",
+      "date": "2026-10-14",
+      "url": "https://www.npmjs.com/package/xd-extract/v/0.2.1"
     },
     {
-      "name": "xd-extract",
-      "tag": "v0.1.1",
-      "date": "2026-10-05",
-      "url": "https://www.npmjs.com/package/xd-extract/v/0.1.1"
+      "name": "maestro-agent-mobile",
+      "tag": "v0.0.0-stage",
+      "date": "2026-10-14",
+      "url": "https://www.npmjs.com/package/maestro-agent-mobile/v/0.0.0-stage"
     },
     {
-      "name": "db-manager",
-      "tag": "v0.1.0",
-      "date": "2026-05-08",
-      "url": "https://github.com/jeanpfs/db-manager/releases/tag/v0.1.0"
+      "name": "maestro-agent-mobile",
+      "tag": "v1.0.0",
+      "date": "2026-10-14",
+      "url": "https://www.npmjs.com/package/maestro-agent-mobile/v/1.0.0"
+    },
+    {
+      "name": "maestro-agent-mobile",
+      "tag": "v1.0.1",
+      "date": "2026-10-14",
+      "url": "https://www.npmjs.com/package/maestro-agent-mobile/v/1.0.1"
+    },
+    {
+      "name": "agent-mobile",
+      "tag": "v1.0.1",
+      "date": "2026-10-14",
+      "url": "https://github.com/jeanpfs/agent-mobile/releases/tag/v1.0.1"
     }
   ],
   "repos": [
     {
-      "name": "jeanpfs.github.io",
-      "desc": "Homepage",
+      "name": "bossa",
+      "desc": "Unofficial native macOS menu-bar app for Bose QC Ultra headphones (SwiftUI + Liquid Glass, Rust core)",
       "stars": 0,
-      "pushed": "2026-10-14",
-      "url": "https://github.com/jeanpfs/jeanpfs.github.io"
+      "created": "2026-10-14",
+      "url": "https://github.com/jeanpfs/bossa"
     },
     {
-      "name": "stock-images-mcp",
-      "desc": "MCP server to search and download stock images from Pexels, Unsplash, and Pixabay",
-      "stars": 4,
-      "pushed": "2026-10-12",
-      "url": "https://github.com/jeanpfs/stock-images-mcp"
-    },
-    {
-      "name": "bd-board",
-      "desc": "A local-first Beads issue board",
-      "stars": 6,
-      "pushed": "2026-10-09",
-      "url": "https://github.com/jeanpfs/bd-board"
+      "name": "lumen",
+      "desc": "Lumen: cross-platform controller for Bluetooth LE LED strips (Rust core + Tauri + React)",
+      "stars": 0,
+      "created": "2026-10-07",
+      "url": "https://github.com/jeanpfs/lumen"
     },
     {
       "name": "xd-extract",
       "desc": "Extract SVG vector art from Adobe XD share links and .xd files: inventory, export and validate. CLI plus agent skills.",
       "stars": 0,
-      "pushed": "2026-10-05",
+      "created": "2026-10-02",
       "url": "https://github.com/jeanpfs/xd-extract"
+    },
+    {
+      "name": "bd-board",
+      "desc": "A local-first Beads issue board",
+      "stars": 6,
+      "created": "2026-06-09",
+      "url": "https://github.com/jeanpfs/bd-board"
+    },
+    {
+      "name": "db-manager",
+      "desc": "Claude Code skill for safe PostgreSQL access from project .env files",
+      "stars": 0,
+      "created": "2026-05-08",
+      "url": "https://github.com/jeanpfs/db-manager"
+    },
+    {
+      "name": "stock-images",
+      "desc": "Claude Code skill for searching and downloading stock images from Pexels, Unsplash, and Pixabay",
+      "stars": 4,
+      "created": "2026-03-14",
+      "url": "https://github.com/jeanpfs/stock-images"
     }
   ],
   "history": {
