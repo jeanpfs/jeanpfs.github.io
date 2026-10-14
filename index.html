@@ -1,0 +1,614 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Jean — código aberto em números</title>
+<meta name="description" content="Pacotes open source de Jean: downloads no npm e no Packagist, stars no GitHub, releases e posts.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg: oklch(0.972 0.014 92);
+  --surface: oklch(0.995 0.004 92);
+  --fg: oklch(0.22 0.03 268);
+  --muted: oklch(0.45 0.025 268);
+  --border: oklch(0.22 0.03 268);
+  --orange: oklch(0.73 0.18 48);
+  --lime: oklch(0.92 0.19 118);
+  --blue: oklch(0.5 0.25 264);
+  --coral: oklch(0.79 0.12 22);
+  --paper: oklch(0.985 0.01 92);
+
+  --font-display: "Bricolage Grotesque", "Avenir Next", "Segoe UI", sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, "SF Mono", Menlo, monospace;
+
+  --radius: 28px;
+  --gap: clamp(10px, 1.2vw, 16px);
+  --pad: clamp(20px, 2.4vw, 34px);
+  --ease: cubic-bezier(.2, .8, .2, 1);
+}
+
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--fg);
+  font-family: var(--font-display);
+  font-size: 17px;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+a { color: inherit; }
+:focus-visible { outline: 3px solid currentColor; outline-offset: 3px; border-radius: 8px; }
+.sr-only {
+  position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px;
+  overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0;
+}
+.skip {
+  position: absolute; left: 16px; top: -60px; z-index: 10;
+  background: var(--fg); color: var(--paper); padding: 10px 16px; border-radius: 12px;
+  font-family: var(--font-mono); font-size: 14px; text-decoration: none;
+}
+.skip:focus { top: 16px; }
+
+/* ---------- grade bento ---------- */
+.bento {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: var(--gap);
+  display: grid;
+  gap: var(--gap);
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  grid-template-areas:
+    "intro intro intro intro npm npm npm npm npm npm npm npm"
+    "comp comp comp comp comp comp comp stars stars stars stars stars"
+    "pkgs pkgs pkgs pkgs pkgs pkgs pkgs rel rel rel rel rel"
+    "pkgs pkgs pkgs pkgs pkgs pkgs pkgs posts posts posts posts posts";
+}
+.intro { grid-area: intro; }
+.big--npm { grid-area: npm; }
+.big--comp { grid-area: comp; }
+.big--stars { grid-area: stars; }
+.pkgs { grid-area: pkgs; }
+.rel { grid-area: rel; }
+.posts { grid-area: posts; }
+
+.card {
+  position: relative;
+  border: 2px solid var(--border);
+  border-radius: var(--radius);
+  padding: var(--pad);
+  background: var(--surface);
+  container-type: inline-size;
+  transition: transform .35s var(--ease), box-shadow .35s var(--ease);
+}
+.card:hover { transform: translate(-3px, -3px); box-shadow: 7px 7px 0 var(--fg); }
+
+.label {
+  font-family: var(--font-mono);
+  font-size: 12.5px;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin: 0;
+}
+
+/* ---------- apresentação ---------- */
+.intro {
+  background: var(--fg);
+  color: var(--paper);
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+.intro .label { color: var(--lime); }
+.intro h1 {
+  margin: 10px 0 0;
+  font-size: clamp(3.2rem, 22cqi, 6.5rem);
+  font-weight: 800;
+  line-height: .9;
+  letter-spacing: -0.045em;
+}
+.intro p.lede {
+  margin: 14px 0 0;
+  font-size: clamp(1.15rem, 6.5cqi, 1.45rem);
+  line-height: 1.3;
+  font-weight: 450;
+  max-width: 26ch;
+  text-wrap: balance;
+}
+.updated {
+  margin-top: auto;
+  font-family: var(--font-mono);
+  font-size: 13px;
+  display: flex; align-items: center; gap: 8px;
+}
+.updated::before {
+  content: ""; width: 8px; height: 8px; border-radius: 50%;
+  background: var(--lime);
+  box-shadow: 0 0 0 4px oklch(0.92 0.19 118 / .2);
+}
+.links { display: flex; flex-wrap: wrap; gap: 8px; margin: 0; padding: 0; list-style: none; }
+.links a {
+  display: inline-flex; align-items: center; gap: 7px;
+  min-height: 44px; padding: 0 16px;
+  border: 1.5px solid oklch(0.985 0.01 92 / .4);
+  border-radius: 999px;
+  font-family: var(--font-mono); font-size: 14px; font-weight: 500;
+  text-decoration: none;
+  transition: background .2s, color .2s, border-color .2s;
+}
+.links a:hover { background: var(--paper); color: var(--fg); border-color: var(--paper); }
+.links a.sponsor { background: var(--lime); color: var(--fg); border-color: var(--lime); }
+.links a.sponsor:hover { background: var(--paper); border-color: var(--paper); }
+.links svg { width: 15px; height: 15px; flex: none; }
+
+/* ---------- big numbers ---------- */
+.big {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  min-height: clamp(300px, 34vw, 470px);
+  overflow: hidden;
+}
+.big--npm { background: var(--orange); }
+.big--comp { background: var(--lime); }
+.big--stars { background: var(--blue); color: var(--paper); border-color: var(--fg); }
+
+.big__top { display: flex; justify-content: space-between; align-items: flex-start; gap: 12px; flex-wrap: wrap; }
+.delta {
+  display: inline-flex; align-items: center; gap: 6px;
+  padding: 6px 12px 6px 9px;
+  border-radius: 999px;
+  background: var(--fg); color: var(--paper);
+  font-family: var(--font-mono); font-size: 13px; font-weight: 600;
+  white-space: nowrap;
+}
+.big--stars .delta { background: var(--paper); color: var(--fg); }
+.delta svg { width: 14px; height: 14px; transition: transform .35s var(--ease); }
+.big:hover .delta svg { transform: translateY(-3px); }
+
+.big__num {
+  margin: auto 0 0;
+  font-size: min(14vw, 31cqi, 15rem);
+  font-weight: 800;
+  line-height: .82;
+  letter-spacing: -0.055em;
+  font-variant-numeric: tabular-nums;
+  font-variation-settings: "opsz" 96;
+  white-space: nowrap;
+  transform-origin: left bottom;
+  transition: transform .45s var(--ease);
+}
+.big:hover .big__num { transform: scale(1.025) rotate(-1deg); }
+
+.spark { position: relative; height: clamp(64px, 9vw, 96px); cursor: crosshair; touch-action: pan-y; }
+.spark svg { display: block; width: 100%; height: 100%; overflow: visible; }
+.spark .area { fill: currentColor; opacity: .16; }
+.spark .line {
+  fill: none; stroke: currentColor; stroke-width: 3;
+  stroke-linejoin: round; stroke-linecap: round;
+  vector-effect: non-scaling-stroke;
+}
+.spark.is-drawing svg { clip-path: inset(-20px 100% -20px -20px); }
+.spark.is-drawn svg { transition: clip-path 1.6s var(--ease); clip-path: inset(-20px -20px -20px -20px); }
+.dot {
+  position: absolute; width: 14px; height: 14px; margin: -7px 0 0 -7px;
+  border-radius: 50%; background: currentColor;
+  box-shadow: 0 0 0 4px var(--card-bg, var(--orange));
+  pointer-events: none;
+  transition: left .15s var(--ease), top .15s var(--ease), transform .3s var(--ease);
+}
+.big--npm { --card-bg: var(--orange); }
+.big--comp { --card-bg: var(--lime); }
+.big--stars { --card-bg: var(--blue); }
+.big:hover .dot { transform: scale(1.3); }
+.dot::after {
+  content: ""; position: absolute; inset: -6px; border-radius: 50%;
+  border: 2px solid currentColor; opacity: 0;
+}
+.big:hover .dot::after { animation: ping 1.4s var(--ease) infinite; }
+@keyframes ping { from { transform: scale(.6); opacity: .9; } to { transform: scale(1.8); opacity: 0; } }
+
+.big__foot {
+  display: flex; justify-content: space-between; gap: 12px; flex-wrap: wrap;
+  font-family: var(--font-mono); font-size: 13px;
+}
+.big__foot strong { font-weight: 600; }
+.big__foot a { text-underline-offset: 3px; }
+.big__foot a svg { width: 12px; height: 12px; transition: transform .3s var(--ease); vertical-align: -1px; }
+.big__foot a:hover svg { transform: translate(2px, -2px); }
+
+/* ---------- pacotes ---------- */
+.card h2 {
+  margin: 4px 0 0;
+  font-size: clamp(1.6rem, 6cqi, 2.4rem);
+  font-weight: 750;
+  line-height: 1.05;
+  letter-spacing: -0.025em;
+}
+.card h2.label { margin: 0; font-size: 12.5px; font-weight: 500; line-height: 1.5; letter-spacing: 0.08em; }
+.card__head { display: flex; justify-content: space-between; align-items: baseline; gap: 16px; flex-wrap: wrap; margin-bottom: 18px; }
+.card__head a { font-family: var(--font-mono); font-size: 13px; font-weight: 500; text-underline-offset: 3px; }
+
+.pkgs { display: flex; flex-direction: column; }
+.pkg-list { list-style: none; margin: 0; padding: 0; counter-reset: pkg; flex: 1; display: flex; flex-direction: column; justify-content: space-between; }
+.pkg {
+  counter-increment: pkg;
+  display: grid;
+  grid-template-columns: 2.4ch minmax(0, 1fr) auto;
+  gap: 4px 18px;
+  align-items: center;
+  padding: 16px 12px;
+  margin: 0 -12px;
+  border-top: 1.5px solid oklch(0.22 0.03 268 / .14);
+  border-radius: 16px;
+  transition: background .2s;
+}
+.pkg:first-child { border-top: 0; }
+.pkg:hover { background: oklch(0.92 0.19 118 / .45); }
+.pkg::before {
+  content: counter(pkg, decimal-leading-zero);
+  font-family: var(--font-mono); font-size: 13px; color: var(--muted);
+  align-self: start; padding-top: 5px;
+}
+.pkg__name {
+  display: inline-flex; align-items: center; gap: 10px; flex-wrap: wrap;
+  font-size: 1.2rem; font-weight: 700; letter-spacing: -0.01em;
+  text-decoration: none;
+}
+.pkg__name:hover { text-decoration: underline; text-underline-offset: 4px; }
+.pkg__desc { grid-column: 2; margin: 2px 0 0; color: var(--muted); font-size: 15px; line-height: 1.45; }
+.pkg__stats {
+  grid-column: 3; grid-row: 1 / span 2;
+  display: grid; gap: 2px; justify-items: end;
+  font-family: var(--font-mono); font-size: 14px; font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+.pkg__stats span { display: inline-flex; align-items: center; gap: 6px; }
+.pkg__stats svg { width: 13px; height: 13px; color: var(--muted); }
+.pkg__stats b { font-weight: 600; }
+.badge {
+  font-family: var(--font-mono); font-size: 11.5px; font-weight: 600;
+  letter-spacing: 0.06em; text-transform: uppercase;
+  padding: 3px 8px; border-radius: 999px; border: 1.5px solid var(--fg);
+}
+.badge--npm { background: var(--orange); color: var(--fg); }
+.badge--composer { background: var(--blue); color: var(--paper); }
+
+/* ---------- releases e posts ---------- */
+.rel { background: var(--coral); }
+.feed { list-style: none; margin: 0; padding: 0; display: grid; gap: 4px; }
+.feed a {
+  display: grid; grid-template-columns: auto 1fr; gap: 2px 14px;
+  padding: 12px; margin: 0 -12px; border-radius: 16px;
+  text-decoration: none;
+  transition: background .2s, transform .25s var(--ease);
+}
+.rel .feed a:hover { background: oklch(0.86 0.09 22); transform: translateX(4px); }
+.posts .feed a:hover { background: oklch(0.73 0.18 48 / .28); transform: translateX(4px); }
+.tag {
+  grid-row: 1 / span 2; align-self: start;
+  font-family: var(--font-mono); font-size: 13px; font-weight: 600;
+  padding: 4px 9px; border-radius: 10px;
+  background: var(--fg); color: var(--paper);
+  font-variant-numeric: tabular-nums;
+}
+.posts .tag { background: transparent; color: var(--fg); border: 1.5px solid var(--fg); padding: 3px 8px; }
+.feed__title { font-weight: 650; font-size: 1.05rem; line-height: 1.3; }
+.feed__meta { font-family: var(--font-mono); font-size: 13px; }
+.posts .feed__meta { color: var(--muted); }
+
+footer {
+  max-width: 1440px; margin: 0 auto; padding: 10px calc(var(--gap) + 8px) 32px;
+  font-family: var(--font-mono); font-size: 13px; color: var(--muted);
+  display: flex; justify-content: space-between; gap: 12px; flex-wrap: wrap;
+}
+
+/* ---------- responsivo ---------- */
+@media (max-width: 1099px) {
+  .bento {
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+    grid-template-areas:
+      "intro intro intro intro intro intro"
+      "npm npm npm npm npm npm"
+      "comp comp comp stars stars stars"
+      "pkgs pkgs pkgs pkgs pkgs pkgs"
+      "rel rel rel posts posts posts";
+  }
+  .intro { min-height: 0; }
+  .big--comp, .big--stars { min-height: 300px; }
+}
+@media (max-width: 699px) {
+  :root { --radius: 22px; }
+  .bento {
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-areas: "intro" "npm" "comp" "stars" "pkgs" "rel" "posts";
+  }
+  .big { min-height: 280px; }
+  .big__num { font-size: min(24vw, 31cqi); }
+  .pkg { grid-template-columns: 2.4ch minmax(0, 1fr); }
+  .pkg__stats { grid-column: 2; grid-row: auto; justify-items: start; grid-auto-flow: column; gap: 16px; margin-top: 6px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { transition-duration: 0s !important; animation: none !important; }
+  .card:hover, .big:hover .big__num, .feed a:hover { transform: none; }
+}
+</style>
+</head>
+<body>
+<a class="skip" href="#numeros">Pular para os números</a>
+
+<main class="bento" id="numeros">
+
+  <header class="card intro" data-od-id="intro">
+    <div>
+      <p class="label">Open source · São Paulo</p>
+      <h1 data-od-id="intro-name">Jean Pierre</h1>
+      <p class="lede" data-od-id="intro-lede">Ferramentas pequenas para quem trabalha com agentes de IA e MCP, e pacotes de Laravel e Lumen que ainda rodam por aí.</p>
+    </div>
+    <nav aria-label="Links principais">
+      <ul class="links" data-od-id="intro-links">
+        <li><a href="#pacotes">pacotes</a></li>
+        <li><a href="#repos">repos</a></li>
+        <li><a href="https://www.npmjs.com/~jean.pierre">npm</a></li>
+        <li><a href="https://packagist.org/packages/lab123/">packagist</a></li>
+        <li><a href="https://github.com/jeanpfs">github</a></li>
+      </ul>
+    </nav>
+    <p class="updated" data-od-id="updated"><span id="updated">atualizado recentemente</span></p>
+  </header>
+
+  <article class="card big big--npm" data-metric="npm" data-od-id="big-npm" aria-labelledby="npm-label">
+    <div class="big__top">
+      <h2 class="label" id="npm-label">Downloads npm · total</h2>
+      <span class="delta" data-delta></span>
+    </div>
+    <p class="big__num"><span aria-hidden="true" data-num>0</span><span class="sr-only" data-num-sr></span></p>
+    <div class="spark" data-spark></div>
+    <div class="big__foot"><span data-readout></span><a href="https://www.npmjs.com/~jean.pierre" data-od-id="big-npm-link">npmjs.com <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M3 9l6-6M4 3h5v5"/></svg></a></div>
+  </article>
+
+  <article class="card big big--comp" data-metric="packagist" data-od-id="big-packagist" aria-labelledby="comp-label">
+    <div class="big__top">
+      <h2 class="label" id="comp-label">Downloads Packagist · total</h2>
+      <span class="delta" data-delta></span>
+    </div>
+    <p class="big__num"><span aria-hidden="true" data-num>0</span><span class="sr-only" data-num-sr></span></p>
+    <div class="spark" data-spark></div>
+    <div class="big__foot"><span data-readout></span><a href="https://packagist.org/packages/lab123/" data-od-id="big-packagist-link">packagist.org <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M3 9l6-6M4 3h5v5"/></svg></a></div>
+  </article>
+
+  <article class="card big big--stars" data-metric="stars" data-od-id="big-stars" aria-labelledby="stars-label">
+    <div class="big__top">
+      <h2 class="label" id="stars-label">Stars GitHub · soma</h2>
+      <span class="delta" data-delta></span>
+    </div>
+    <p class="big__num"><span aria-hidden="true" data-num>0</span><span class="sr-only" data-num-sr></span></p>
+    <div class="spark" data-spark></div>
+    <div class="big__foot"><span data-readout></span><a href="https://github.com/jeanpfs" data-od-id="big-stars-link">github.com <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M3 9l6-6M4 3h5v5"/></svg></a></div>
+  </article>
+
+  <section class="card pkgs" id="pacotes" aria-labelledby="pkgs-title" data-od-id="packages">
+    <div class="card__head">
+      <div>
+        <p class="label">Mais baixados</p>
+        <h2 id="pkgs-title">Top 5 pacotes</h2>
+      </div>
+      <a href="https://github.com/jeanpfs?tab=repositories">todos os repositórios</a>
+    </div>
+    <ol class="pkg-list" id="pkg-list"></ol>
+  </section>
+
+  <section class="card rel" aria-labelledby="rel-title" data-od-id="releases">
+    <div class="card__head">
+      <div>
+        <p class="label">Changelog</p>
+        <h2 id="rel-title">Releases recentes</h2>
+      </div>
+    </div>
+    <ul class="feed" id="rel-list"></ul>
+  </section>
+
+  <section class="card posts" id="repos" aria-labelledby="posts-title" data-od-id="repos">
+    <div class="card__head">
+      <div>
+        <p class="label">Em andamento</p>
+        <h2 id="posts-title">Repos recentes</h2>
+      </div>
+      <a href="https://github.com/jeanpfs?tab=repositories">ver todos</a>
+    </div>
+    <ul class="feed" id="repo-list"></ul>
+  </section>
+
+</main>
+
+<footer>
+  <span>Jean Pierre · São Paulo · código aberto</span>
+  <span>Números lidos de stats.json</span>
+</footer>
+
+<script>
+(() => {
+  /*FALLBACK*/const FALLBACK = {"npm":{"total":8995,"month":3665},"packagist":{"total":84983,"month":631},"stars":{"total":15},"updatedAt":"2026-10-14T00:33:42Z","packages":[{"name":"lab123/lumen-notification","desc":"Wrapper of Laravel Notification adapted to work with Lumen 5.x","registry":"composer","downloads":51355,"stars":2,"month":327},{"name":"lab123/aws-sns","desc":"Amazon SNS Notifications Channel for Laravel 5.3","registry":"composer","downloads":28809,"stars":32,"month":0},{"name":"stock-images-mcp","desc":"MCP server to search and download stock images from Pexels, Unsplash, and Pixabay","registry":"npm","downloads":5775,"stars":4,"version":"2.0.0"},{"name":"lab123/lumen-vendor-publish","desc":"Command for publish vendor configs to Lumen 5.x","registry":"composer","downloads":2246,"stars":0,"month":0},{"name":"xd-extract","desc":"Extract SVG vectors from Adobe XD share links and .xd files, with inventory and validation.","registry":"npm","downloads":246,"stars":0,"version":"0.1.1"}],"releases":[{"name":"stock-images-mcp","tag":"v2.0.0","date":"2026-10-06","url":"https://www.npmjs.com/package/stock-images-mcp/v/2.0.0"},{"name":"xd-extract","tag":"v0.1.0","date":"2026-10-05","url":"https://www.npmjs.com/package/xd-extract/v/0.1.0"},{"name":"xd-extract","tag":"v0.1.1","date":"2026-10-05","url":"https://www.npmjs.com/package/xd-extract/v/0.1.1"},{"name":"db-manager","tag":"v0.1.0","date":"2026-05-08","url":"https://github.com/jeanpfs/db-manager/releases/tag/v0.1.0"}],"repos":[{"name":"stock-images-mcp","desc":"MCP server to search and download stock images from Pexels, Unsplash, and Pixabay","stars":4,"pushed":"2026-10-12","url":"https://github.com/jeanpfs/stock-images-mcp"},{"name":"bd-board","desc":"A local-first Beads issue board","stars":6,"pushed":"2026-10-09","url":"https://github.com/jeanpfs/bd-board"},{"name":"xd-extract","desc":"Extract SVG vector art from Adobe XD share links and .xd files: inventory, export and validate. CLI plus agent skills.","stars":0,"pushed":"2026-10-05","url":"https://github.com/jeanpfs/xd-extract"},{"name":"codesearch-bench","desc":"Benchmark harness for comparing repository indexers and code-intelligence tools.","stars":0,"pushed":"2026-06-11","url":"https://github.com/jeanpfs/codesearch-bench"}],"history":{"npm":[954,1152,1205,1527,1675,2213,3111,3482,4090,5060,6803,8995],"stars":[0,0,0,1,2,3,4,6,12,12,14,15]}};/*END*/
+
+  const reduceMotion = matchMedia("(prefers-reduced-motion: reduce)").matches;
+  const nf1 = new Intl.NumberFormat("pt-BR", { maximumFractionDigits: 1 });
+  const nfInt = new Intl.NumberFormat("pt-BR");
+  const monthFmt = new Intl.DateTimeFormat("pt-BR", { month: "short", year: "2-digit" });
+  const monthShort = new Intl.DateTimeFormat("pt-BR", { month: "short" });
+
+  function compact(v) {
+    if (v >= 1e6) return nf1.format(Math.floor(v / 1e5) / 10) + "M";
+    if (v >= 1e3) return nf1.format(Math.floor(v / 100) / 10) + "k";
+    return nfInt.format(Math.round(v));
+  }
+  function spoken(v) {
+    if (v >= 1e6) return nf1.format(v / 1e6) + " milhões";
+    if (v >= 1e3) return nf1.format(v / 1e3) + " mil";
+    return nfInt.format(v);
+  }
+
+  function relative(iso) {
+    const diff = (Date.now() - new Date(iso).getTime()) / 1000;
+    if (!isFinite(diff)) return "atualizado recentemente";
+    if (diff < 60) return "atualizado agora";
+    const rtf = new Intl.RelativeTimeFormat("pt-BR", { numeric: "auto" });
+    const steps = [["minute", 60], ["hour", 3600], ["day", 86400], ["month", 2592000], ["year", 31536000]];
+    let unit = "minute", size = 60;
+    for (const [u, s] of steps) if (diff >= s) { unit = u; size = s; }
+    return "atualizado " + rtf.format(-Math.floor(diff / size), unit);
+  }
+
+  function monthsBack(iso, count) {
+    const end = new Date(iso);
+    return Array.from({ length: count }, (_, i) =>
+      new Date(end.getFullYear(), end.getMonth() - (count - 1 - i), 1));
+  }
+
+  function countUp(el, target) {
+    if (reduceMotion) { el.textContent = compact(target); return; }
+    const duration = 1600, start = performance.now();
+    const tick = now => {
+      const t = Math.min((now - start) / duration, 1);
+      const eased = t === 1 ? 1 : 1 - Math.pow(2, -10 * t);
+      el.textContent = compact(target * eased);
+      if (t < 1) requestAnimationFrame(tick);
+    };
+    requestAnimationFrame(tick);
+  }
+
+  function sparkline(host, values, months, readout, defaultText) {
+    const W = 300, H = 100, pad = 8;
+    const min = Math.min(...values), max = Math.max(...values);
+    const range = max - min || 1;
+    const pts = values.map((v, i) => [
+      (i / (values.length - 1)) * W,
+      pad + (1 - (v - min) / range) * (H - pad * 2)
+    ]);
+    const line = pts.map((p, i) => (i ? "L" : "M") + p[0].toFixed(1) + " " + p[1].toFixed(1)).join(" ");
+    const area = line + ` L${W} ${H} L0 ${H} Z`;
+    const first = monthFmt.format(months[0]), last = monthFmt.format(months.at(-1));
+    host.innerHTML =
+      `<svg viewBox="0 0 ${W} ${H}" preserveAspectRatio="none" role="img" aria-label="Histórico de 12 meses, de ${compact(values[0])} em ${first} a ${compact(values.at(-1))} em ${last}">` +
+      `<path class="area" d="${area}"/><path class="line" d="${line}"/></svg>` +
+      `<span class="dot" aria-hidden="true"></span>`;
+    const dot = host.querySelector(".dot");
+    const place = i => {
+      dot.style.left = (pts[i][0] / W * 100) + "%";
+      dot.style.top = (pts[i][1] / H * 100) + "%";
+    };
+    place(values.length - 1);
+
+    if (!reduceMotion) {
+      host.classList.add("is-drawing");
+      requestAnimationFrame(() => requestAnimationFrame(() => host.classList.add("is-drawn")));
+    }
+
+    host.addEventListener("pointermove", e => {
+      const r = host.getBoundingClientRect();
+      const i = Math.round(Math.min(Math.max((e.clientX - r.left) / r.width, 0), 1) * (values.length - 1));
+      place(i);
+      readout.innerHTML = `<strong>${compact(values[i])}</strong> em ${monthFmt.format(months[i])}`;
+    });
+    host.addEventListener("pointerleave", () => {
+      place(values.length - 1);
+      readout.innerHTML = defaultText;
+    });
+  }
+
+  const arrowUp = '<svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 12V2M3 6l4-4 4 4"/></svg>';
+  const arrowDown = '<svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 2v10M3 8l4 4 4-4"/></svg>';
+
+  function renderMetric(card, data) {
+    const key = card.dataset.metric;
+    const history = (data.history && data.history[key]) || [];
+    const total = data[key].total;
+    const months = monthsBack(data.updatedAt, history.length || 12);
+    const prev = history.length > 1 ? history.at(-2) : 0;
+    const gain = key === "stars" ? total - prev : (data[key].month ?? total - prev);
+    const pct = total - gain > 0 ? gain / (total - gain) * 100 : 0;
+    const sign = pct >= 0 ? "+" : "−";
+    const pctText = sign + nf1.format(Math.abs(pct)) + "%";
+    const unit = key === "stars" ? "stars" : "downloads";
+
+    const delta = card.querySelector("[data-delta]");
+    delta.innerHTML = (pct >= 0 ? arrowUp : arrowDown) +
+      `<span>${pctText} em ${monthShort.format(months.at(-1))}</span>`;
+    delta.setAttribute("aria-label", `Variação no mês: ${pctText}`);
+
+    card.querySelector("[data-num-sr]").textContent = `${spoken(total)} de ${unit}`;
+    countUp(card.querySelector("[data-num]"), total);
+
+    const readout = card.querySelector("[data-readout]");
+    const readoutUnit = key === "stars" && Math.abs(gain) === 1 ? "star" : unit;
+    const defaultText = `<strong>${sign}${compact(Math.abs(gain))}</strong> ${readoutUnit} este mês`;
+    readout.innerHTML = defaultText;
+    if (history.length > 1) sparkline(card.querySelector("[data-spark]"), history, months, readout, defaultText);
+  }
+
+  const icoDown = '<svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 2v8M3.5 6.5 7 10l3.5-3.5M2.5 12.5h9"/></svg>';
+  const icoStar = '<svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" aria-hidden="true"><path d="M7 1.6l1.65 3.4 3.75.5-2.73 2.6.68 3.7L7 10.04 3.65 11.8l.68-3.7L1.6 5.5l3.75-.5z"/></svg>';
+  const esc = s => String(s).replace(/[&<>"']/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
+
+  function renderPackages(list) {
+    const top = [...list].sort((a, b) => b.downloads - a.downloads).slice(0, 5);
+    document.getElementById("pkg-list").innerHTML = top.map(p => {
+      const isNpm = p.registry === "npm";
+      const href = isNpm
+        ? "https://www.npmjs.com/package/" + p.name
+        : "https://packagist.org/packages/" + p.name;
+      return `<li class="pkg" data-od-id="package-${esc(p.name.replace(/[^a-z0-9]+/gi, "-").replace(/^-|-$/g, ""))}">
+        <a class="pkg__name" href="${esc(href)}">${esc(p.name)}<span class="badge badge--${isNpm ? "npm" : "composer"}">${isNpm ? "npm" : "composer"}</span></a>
+        <p class="pkg__desc">${esc(p.desc)}</p>
+        <div class="pkg__stats">
+          <span>${icoDown}<b>${compact(p.downloads)}</b><span class="sr-only"> downloads</span></span>
+          <span>${icoStar}<b>${compact(p.stars)}</b><span class="sr-only"> stars</span></span>
+        </div>
+      </li>`;
+    }).join("");
+  }
+
+  const relDate = iso => {
+    const days = Math.round((Date.now() - new Date(iso + "T12:00:00Z").getTime()) / 864e5);
+    if (days < 1) return "hoje";
+    if (days < 14) return `há ${days} ${days === 1 ? "dia" : "dias"}`;
+    if (days < 60) return `há ${Math.round(days / 7)} semanas`;
+    return `há ${Math.round(days / 30)} meses`;
+  };
+
+  function renderReleases(list) {
+    document.getElementById("rel-list").innerHTML = list.map(r =>
+      `<li><a href="${esc(r.url)}"><span class="tag">${esc(r.tag)}</span><span class="feed__title">${esc(r.name)}</span><span class="feed__meta">${relDate(r.date)}</span></a></li>`
+    ).join("");
+  }
+
+  function renderRepos(list) {
+    document.getElementById("repo-list").innerHTML = list.map(r =>
+      `<li><a href="${esc(r.url)}"><span class="tag">${esc(r.stars)} ★</span><span class="feed__title">${esc(r.name)}${r.desc ? " — " + esc(r.desc) : ""}</span><span class="feed__meta">push ${relDate(r.pushed)}</span></a></li>`
+    ).join("");
+  }
+
+  function render(data) {
+    document.querySelectorAll("[data-metric]").forEach(card => renderMetric(card, data));
+    renderPackages(data.packages || []);
+    renderReleases(data.releases || []);
+    renderRepos(data.repos || []);
+    const updated = document.getElementById("updated");
+    updated.textContent = relative(data.updatedAt);
+    updated.parentElement.title = new Date(data.updatedAt).toLocaleString("pt-BR");
+  }
+
+  fetch("stats.json", { cache: "no-store" })
+    .then(r => { if (!r.ok) throw new Error(r.status); return r.json(); })
+    .then(data => data && data.npm && data.packagist && data.stars ? data : FALLBACK)
+    .catch(() => FALLBACK)
+    .then(render);
+})();
+</script>
+</body>
+</html>

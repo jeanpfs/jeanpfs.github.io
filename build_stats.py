@@ -1,0 +1,153 @@
+#!/usr/bin/env python3
+"""Gera stats.json com números reais (npm, Packagist, GitHub). Só stdlib.
+
+Uso:  GITHUB_TOKEN=... python3 build_stats.py [saida.json]
+Sem GITHUB_TOKEN o histórico de stars é omitido (a API de stargazers exige auth).
+"""
+import collections, datetime as dt, json, os, sys, urllib.parse, urllib.request
+
+GH_USERS = ["jeanpfs", "lab123"]       # contas cujos repos somam stars
+NPM_USER = "jean.pierre"
+PACKAGIST_VENDOR = "lab123"
+HIDE = {"lab123/odin", "@laberry/fab-material", "fab-material"}  # internos/sem descrição
+TOKEN = os.environ.get("GITHUB_TOKEN")
+NOW = dt.datetime.now(dt.timezone.utc)
+
+
+def get(url, accept=None, auth=False):
+    h = {"User-Agent": "stats-builder"}
+    if accept:
+        h["Accept"] = accept
+    if auth and TOKEN:
+        h["Authorization"] = f"Bearer {TOKEN}"
+    with urllib.request.urlopen(urllib.request.Request(url, headers=h), timeout=30) as r:
+        return json.load(r)
+
+
+def pages(url, **kw):
+    out, p = [], 1
+    while True:
+        d = get(f"{url}{'&' if '?' in url else '?'}per_page=100&page={p}", **kw)
+        out += d
+        if len(d) < 100:
+            return out
+        p += 1
+
+
+def months_back(n=12):
+    """Últimos n meses 'YYYY-MM', do mais antigo ao atual."""
+    y, m, out = NOW.year, NOW.month, []
+    for _ in range(n):
+        out.append(f"{y}-{m:02d}")
+        m -= 1
+        if m == 0:
+            y, m = y - 1, 12
+    return out[::-1]
+
+
+MONTHS = months_back()
+
+
+def cumulative(total, per_month):
+    """Série acumulada terminando em `total`, a partir dos incrementos mensais."""
+    run, series = total, []
+    for mo in reversed(MONTHS):
+        series.append(run)
+        run -= per_month.get(mo, 0)
+    return series[::-1]
+
+
+# ---- npm ----
+search = get(f"https://registry.npmjs.org/-/v1/search?text=maintainer:{NPM_USER}&size=100")
+npm_pkgs, npm_month, npm_inc = [], 0, collections.Counter()
+start = f"{MONTHS[0]}-01"
+for o in search["objects"]:
+    name = o["package"]["name"]
+    q = urllib.parse.quote(name, safe="")
+    last = get(f"https://api.npmjs.org/downloads/point/last-month/{q}")["downloads"]
+    total = get(f"https://api.npmjs.org/downloads/point/2015-01-01:{NOW:%Y-%m-%d}/{q}")["downloads"]
+    for d in get(f"https://api.npmjs.org/downloads/range/{start}:{NOW:%Y-%m-%d}/{q}")["downloads"]:
+        npm_inc[d["day"][:7]] += d["downloads"]
+    npm_month += last
+    npm_pkgs.append({"name": name, "desc": o["package"].get("description") or "", "registry": "npm",
+                     "downloads": total, "stars": 0, "version": o["package"]["version"]})
+npm_total = sum(p["downloads"] for p in npm_pkgs)
+
+# ---- Packagist ----
+comp_pkgs = []
+for n in get(f"https://packagist.org/packages/list.json?vendor={PACKAGIST_VENDOR}")["packageNames"]:
+    p = get(f"https://packagist.org/packages/{n}.json")["package"]
+    comp_pkgs.append({"name": n, "desc": p["description"] or "", "registry": "composer",
+                      "downloads": p["downloads"]["total"], "stars": p["favers"],
+                      "month": p["downloads"]["monthly"]})
+comp_total = sum(p["downloads"] for p in comp_pkgs)
+comp_month = sum(p["month"] for p in comp_pkgs)
+
+# ---- GitHub ----
+repos = []
+for u in GH_USERS:
+    repos += [r for r in pages(f"https://api.github.com/users/{u}/repos?type=owner", auth=True) if not r["fork"]]
+stars_total = sum(r["stargazers_count"] for r in repos)
+star_inc, star_history = collections.Counter(), None
+if TOKEN:
+    for r in repos:
+        if r["stargazers_count"]:
+            for s in pages(f"https://api.github.com/repos/{r['full_name']}/stargazers",
+                           accept="application/vnd.github.star+json", auth=True):
+                star_inc[s["starred_at"][:7]] += 1
+    star_history = cumulative(stars_total, star_inc)
+by_name = {r["name"]: r for r in repos}
+for p in npm_pkgs:  # stars do repo homônimo
+    p["stars"] = by_name.get(p["name"].split("/")[-1], {}).get("stargazers_count", 0)
+
+# ---- releases (npm + GitHub) ----
+releases = []
+for p in npm_pkgs:
+    if p["name"] in HIDE:
+        continue
+    times = get(f"https://registry.npmjs.org/{urllib.parse.quote(p['name'], safe='@')}")["time"]
+    for v, t in times.items():
+        if v not in ("created", "modified"):
+            releases.append({"name": p["name"], "tag": "v" + v, "date": t[:10],
+                             "url": f"https://www.npmjs.com/package/{p['name']}/v/{v}"})
+for r in repos:
+    for rel in get(f"https://api.github.com/repos/{r['full_name']}/releases?per_page=3", auth=True):
+        releases.append({"name": r["name"], "tag": rel["tag_name"], "date": rel["published_at"][:10], "url": rel["html_url"]})
+seen, uniq = set(), []
+for r in sorted(releases, key=lambda x: x["date"], reverse=True):
+    k = (r["name"], r["tag"].lstrip("v"))
+    if k not in seen:
+        seen.add(k)
+        uniq.append(r)
+
+recent = sorted((r for r in repos if r["name"] not in GH_USERS and not r["archived"]),
+                key=lambda r: r["pushed_at"], reverse=True)[:4]
+
+out = {
+    "npm": {"total": npm_total, "month": npm_month},
+    "packagist": {"total": comp_total, "month": comp_month},
+    "stars": {"total": stars_total},
+    "updatedAt": NOW.strftime("%Y-%m-%dT%H:%M:%SZ"),
+    "packages": [p for p in sorted(npm_pkgs + comp_pkgs, key=lambda p: -p["downloads"])
+                 if p["name"] not in HIDE and p["desc"]][:5],
+    "releases": uniq[:4],
+    "repos": [{"name": r["name"], "desc": r["description"] or "", "stars": r["stargazers_count"],
+               "pushed": r["pushed_at"][:10], "url": r["html_url"]} for r in recent],
+    "history": {"npm": cumulative(npm_total, npm_inc)},
+}
+if star_history:
+    out["history"]["stars"] = star_history
+path = sys.argv[1] if len(sys.argv) > 1 else "stats.json"
+with open(path, "w") as f:
+    json.dump(out, f, ensure_ascii=False, indent=2)
+    f.write("\n")
+print(f"{path}: npm {npm_total} (+{npm_month}/mês) · packagist {comp_total} · stars {stars_total}")
+
+# mantém o fallback embutido no index.html (usado quando o fetch falha, ex.: file://)
+html_path = os.path.join(os.path.dirname(os.path.abspath(path)), "index.html")
+if os.path.exists(html_path):
+    import re
+    html = open(html_path, encoding="utf-8").read()
+    blob = json.dumps(out, ensure_ascii=False, separators=(",", ":"))
+    new = re.sub(r"/\*FALLBACK\*/.*?/\*END\*/", lambda m: f"/*FALLBACK*/const FALLBACK = {blob};/*END*/", html, flags=re.S)
+    open(html_path, "w", encoding="utf-8").write(new)
