@@ -1,16 +1,16 @@
 {
   "npm": {
-    "total": 8995,
+    "total": 8992,
     "month": 3665
   },
   "packagist": {
     "total": 84983,
-    "month": 631
+    "month": 593
   },
   "stars": {
     "total": 15
   },
-  "updatedAt": "2026-10-14T16:26:24Z",
+  "updatedAt": "2026-10-15T13:52:59Z",
   "packages": [
     {
       "name": "lab123/lumen-notification",
@@ -18,7 +18,7 @@
       "registry": "composer",
       "downloads": 51355,
       "stars": 2,
-      "month": 327
+      "month": 308
     },
     {
       "name": "lab123/aws-sns",
@@ -137,18 +137,18 @@
   ],
   "history": {
     "npm": [
-      954,
-      1152,
-      1205,
-      1527,
-      1675,
-      2213,
-      3111,
-      3482,
-      4090,
-      5060,
-      6803,
-      8995
+      951,
+      1149,
+      1202,
+      1524,
+      1672,
+      2210,
+      3108,
+      3479,
+      4087,
+      5057,
+      6800,
+      8992
     ],
     "stars": [
       0,
