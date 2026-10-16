@@ -1,24 +1,24 @@
 {
   "npm": {
-    "total": 8992,
+    "total": 8988,
     "month": 3665
   },
   "packagist": {
-    "total": 84983,
-    "month": 593
+    "total": 84984,
+    "month": 554
   },
   "stars": {
     "total": 15
   },
-  "updatedAt": "2026-10-15T13:52:59Z",
+  "updatedAt": "2026-10-16T13:43:04Z",
   "packages": [
     {
       "name": "lab123/lumen-notification",
       "desc": "Wrapper of Laravel Notification adapted to work with Lumen 5.x",
       "registry": "composer",
-      "downloads": 51355,
+      "downloads": 51356,
       "stars": 2,
-      "month": 308
+      "month": 289
     },
     {
       "name": "lab123/aws-sns",
@@ -34,7 +34,7 @@
       "registry": "npm",
       "downloads": 5775,
       "stars": 4,
-      "version": "2.0.0"
+      "version": "2.0.1"
     },
     {
       "name": "lab123/lumen-vendor-publish",
@@ -50,48 +50,55 @@
       "registry": "npm",
       "downloads": 246,
       "stars": 0,
-      "version": "0.2.1"
+      "version": "0.2.2"
     }
   ],
   "releases": [
     {
-      "name": "xd-extract",
-      "tag": "v0.2.0",
-      "date": "2026-10-14",
-      "url": "https://www.npmjs.com/package/xd-extract/v/0.2.0"
+      "name": "stock-images-mcp",
+      "tag": "v2.0.1",
+      "date": "2026-10-16",
+      "url": "https://www.npmjs.com/package/stock-images-mcp/v/2.0.1"
     },
     {
       "name": "xd-extract",
-      "tag": "v0.2.1",
-      "date": "2026-10-14",
-      "url": "https://www.npmjs.com/package/xd-extract/v/0.2.1"
+      "tag": "v0.2.2",
+      "date": "2026-10-16",
+      "url": "https://www.npmjs.com/package/xd-extract/v/0.2.2"
     },
     {
       "name": "maestro-agent-mobile",
-      "tag": "v0.0.0-stage",
-      "date": "2026-10-14",
-      "url": "https://www.npmjs.com/package/maestro-agent-mobile/v/0.0.0-stage"
-    },
-    {
-      "name": "maestro-agent-mobile",
-      "tag": "v1.0.0",
-      "date": "2026-10-14",
-      "url": "https://www.npmjs.com/package/maestro-agent-mobile/v/1.0.0"
-    },
-    {
-      "name": "maestro-agent-mobile",
-      "tag": "v1.0.1",
-      "date": "2026-10-14",
-      "url": "https://www.npmjs.com/package/maestro-agent-mobile/v/1.0.1"
+      "tag": "v1.0.2",
+      "date": "2026-10-16",
+      "url": "https://www.npmjs.com/package/maestro-agent-mobile/v/1.0.2"
     },
     {
       "name": "agent-mobile",
-      "tag": "v1.0.1",
-      "date": "2026-10-14",
-      "url": "https://github.com/jeanpfs/agent-mobile/releases/tag/v1.0.1"
+      "tag": "v1.0.2",
+      "date": "2026-10-16",
+      "url": "https://github.com/jeanpfs/agent-mobile/releases/tag/v1.0.2"
+    },
+    {
+      "name": "bd-board",
+      "tag": "v0.1.0",
+      "date": "2026-10-16",
+      "url": "https://github.com/jeanpfs/bd-board/releases/tag/v0.1.0"
+    },
+    {
+      "name": "bossa",
+      "tag": "v0.1.1",
+      "date": "2026-10-16",
+      "url": "https://github.com/jeanpfs/bossa/releases/tag/v0.1.1"
     }
   ],
   "repos": [
+    {
+      "name": "homebrew-tap",
+      "desc": "Homebrew tap for jeanpfs' macOS tools (bossa, clipboard-screenshot)",
+      "stars": 0,
+      "created": "2026-10-16",
+      "url": "https://github.com/jeanpfs/homebrew-tap"
+    },
     {
       "name": "bossa",
       "desc": "Unofficial native macOS menu-bar app for Bose QC Ultra headphones (SwiftUI + Liquid Glass, Rust core)",
@@ -114,41 +121,34 @@
       "url": "https://github.com/jeanpfs/xd-extract"
     },
     {
+      "name": "clipboard-screenshot",
+      "desc": "Automatically copy every new macOS screenshot to the clipboard (launchd, zero dependencies)",
+      "stars": 0,
+      "created": "2026-09-19",
+      "url": "https://github.com/jeanpfs/clipboard-screenshot"
+    },
+    {
       "name": "bd-board",
       "desc": "A local-first Beads issue board",
       "stars": 6,
       "created": "2026-06-09",
       "url": "https://github.com/jeanpfs/bd-board"
-    },
-    {
-      "name": "db-manager",
-      "desc": "Claude Code skill for safe PostgreSQL access from project .env files",
-      "stars": 0,
-      "created": "2026-05-08",
-      "url": "https://github.com/jeanpfs/db-manager"
-    },
-    {
-      "name": "stock-images",
-      "desc": "Claude Code skill for searching and downloading stock images from Pexels, Unsplash, and Pixabay",
-      "stars": 4,
-      "created": "2026-03-14",
-      "url": "https://github.com/jeanpfs/stock-images"
     }
   ],
   "history": {
     "npm": [
-      951,
-      1149,
-      1202,
-      1524,
-      1672,
-      2210,
-      3108,
-      3479,
-      4087,
-      5057,
-      6800,
-      8992
+      947,
+      1145,
+      1198,
+      1520,
+      1668,
+      2206,
+      3104,
+      3475,
+      4083,
+      5053,
+      6796,
+      8988
     ],
     "stars": [
       0,
