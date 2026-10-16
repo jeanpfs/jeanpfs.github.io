@@ -83,9 +83,10 @@ npm_total = sum(p["downloads"] for p in npm_pkgs)
 comp_pkgs = []
 for n in get(f"https://packagist.org/packages/list.json?vendor={PACKAGIST_VENDOR}")["packageNames"]:
     p = get(f"https://packagist.org/packages/{n}.json")["package"]
-    comp_pkgs.append({"name": n, "desc": p["description"] or "", "registry": "composer",
+    desc = p["description"] or ""
+    comp_pkgs.append({"name": n, "desc": desc, "registry": "composer",
                       "downloads": p["downloads"]["total"], "stars": p["favers"],
-                      "month": p["downloads"]["monthly"]})
+                      "month": p["downloads"]["monthly"], "abandoned": bool(p.get("abandoned"))})
 comp_total = sum(p["downloads"] for p in comp_pkgs)
 comp_month = sum(p["month"] for p in comp_pkgs)
 
@@ -157,7 +158,7 @@ out = {
     "stars": {"total": stars_total},
     "updatedAt": NOW.strftime("%Y-%m-%dT%H:%M:%SZ"),
     "packages": [p for p in sorted(npm_pkgs + comp_pkgs, key=lambda p: -p["downloads"])
-                 if p["name"] not in HIDE and p["desc"]][:5],
+                 if p["name"] not in HIDE and p["desc"] and not p.get("abandoned")][:5],
     "releases": uniq[:6],
     "repos": [{"name": r["name"], "desc": r["description"] or "", "stars": r["stargazers_count"],
                "created": r["created_at"][:10], "url": r["html_url"]} for r in recent],

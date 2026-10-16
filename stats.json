@@ -10,7 +10,7 @@
   "stars": {
     "total": 15
   },
-  "updatedAt": "2026-10-16T13:43:04Z",
+  "updatedAt": "2026-10-16T19:38:16Z",
   "packages": [
     {
       "name": "lab123/lumen-notification",
@@ -18,7 +18,8 @@
       "registry": "composer",
       "downloads": 51356,
       "stars": 2,
-      "month": 289
+      "month": 289,
+      "abandoned": false
     },
     {
       "name": "lab123/aws-sns",
@@ -26,7 +27,8 @@
       "registry": "composer",
       "downloads": 28809,
       "stars": 32,
-      "month": 0
+      "month": 0,
+      "abandoned": false
     },
     {
       "name": "stock-images-mcp",
@@ -37,20 +39,20 @@
       "version": "2.0.1"
     },
     {
-      "name": "lab123/lumen-vendor-publish",
-      "desc": "Command for publish vendor configs to Lumen 5.x",
-      "registry": "composer",
-      "downloads": 2246,
-      "stars": 0,
-      "month": 0
-    },
-    {
       "name": "xd-extract",
       "desc": "Extract SVG vectors from Adobe XD share links and .xd files, with inventory and validation.",
       "registry": "npm",
       "downloads": 246,
       "stars": 0,
-      "version": "0.2.2"
+      "version": "0.2.3"
+    },
+    {
+      "name": "maestro-agent-mobile",
+      "desc": "Mobile app automation CLI for AI agents — works with any app on iOS Simulator or Android Emulator via Maestro",
+      "registry": "npm",
+      "downloads": 0,
+      "stars": 0,
+      "version": "1.0.2"
     }
   ],
   "releases": [
@@ -67,6 +69,12 @@
       "url": "https://www.npmjs.com/package/xd-extract/v/0.2.2"
     },
     {
+      "name": "xd-extract",
+      "tag": "v0.2.3",
+      "date": "2026-10-16",
+      "url": "https://www.npmjs.com/package/xd-extract/v/0.2.3"
+    },
+    {
       "name": "maestro-agent-mobile",
       "tag": "v1.0.2",
       "date": "2026-10-16",
@@ -80,15 +88,9 @@
     },
     {
       "name": "bd-board",
-      "tag": "v0.1.0",
-      "date": "2026-10-16",
-      "url": "https://github.com/jeanpfs/bd-board/releases/tag/v0.1.0"
-    },
-    {
-      "name": "bossa",
       "tag": "v0.1.1",
       "date": "2026-10-16",
-      "url": "https://github.com/jeanpfs/bossa/releases/tag/v0.1.1"
+      "url": "https://github.com/jeanpfs/bd-board/releases/tag/v0.1.1"
     }
   ],
   "repos": [
