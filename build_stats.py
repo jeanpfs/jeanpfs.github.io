@@ -139,8 +139,11 @@ for p in npm_pkgs:
         if v not in ("created", "modified"):
             releases.append({"name": p["name"], "tag": "v" + v, "date": t[:10],
                              "url": f"https://www.npmjs.com/package/{p['name']}/v/{v}"})
+gh_asset_downloads = 0  # downloads dos binários anexados às releases (apps)
 for r in repos:
-    for rel in get(f"https://api.github.com/repos/{r['full_name']}/releases?per_page=3", auth=True):
+    all_rel = pages(f"https://api.github.com/repos/{r['full_name']}/releases", auth=True)
+    gh_asset_downloads += sum(a["download_count"] for rel in all_rel for a in rel["assets"])
+    for rel in all_rel[:3]:
         releases.append({"name": r["name"], "tag": rel["tag_name"], "date": rel["published_at"][:10], "url": rel["html_url"]})
 seen, uniq = set(), []
 for r in sorted(releases, key=lambda x: x["date"], reverse=True):
@@ -156,6 +159,7 @@ out = {
     "npm": {"total": npm_total, "month": npm_month},
     "packagist": {"total": comp_total, "month": comp_month},
     "stars": {"total": stars_total},
+    "githubAssets": {"total": gh_asset_downloads},
     "updatedAt": NOW.strftime("%Y-%m-%dT%H:%M:%SZ"),
     "packages": [p for p in sorted(npm_pkgs + comp_pkgs, key=lambda p: -p["downloads"])
                  if p["name"] not in HIDE and p["desc"] and not p.get("abandoned")][:5],

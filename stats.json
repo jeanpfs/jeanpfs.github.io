@@ -10,7 +10,10 @@
   "stars": {
     "total": 15
   },
-  "updatedAt": "2026-10-16T19:38:16Z",
+  "githubAssets": {
+    "total": 11
+  },
+  "updatedAt": "2026-10-16T19:58:29Z",
   "packages": [
     {
       "name": "lab123/lumen-notification",
@@ -52,7 +55,7 @@
       "registry": "npm",
       "downloads": 0,
       "stars": 0,
-      "version": "1.0.2"
+      "version": "1.0.3"
     }
   ],
   "releases": [
@@ -81,16 +84,16 @@
       "url": "https://www.npmjs.com/package/maestro-agent-mobile/v/1.0.2"
     },
     {
-      "name": "agent-mobile",
-      "tag": "v1.0.2",
+      "name": "maestro-agent-mobile",
+      "tag": "v1.0.3",
       "date": "2026-10-16",
-      "url": "https://github.com/jeanpfs/agent-mobile/releases/tag/v1.0.2"
+      "url": "https://www.npmjs.com/package/maestro-agent-mobile/v/1.0.3"
     },
     {
-      "name": "bd-board",
-      "tag": "v0.1.1",
+      "name": "agent-mobile",
+      "tag": "v1.0.3",
       "date": "2026-10-16",
-      "url": "https://github.com/jeanpfs/bd-board/releases/tag/v0.1.1"
+      "url": "https://github.com/jeanpfs/agent-mobile/releases/tag/v1.0.3"
     }
   ],
   "repos": [
