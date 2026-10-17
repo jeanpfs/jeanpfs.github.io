@@ -1,11 +1,11 @@
 {
   "npm": {
-    "total": 8988,
+    "total": 8985,
     "month": 3665
   },
   "packagist": {
-    "total": 84984,
-    "month": 554
+    "total": 84988,
+    "month": 490
   },
   "stars": {
     "total": 15
@@ -13,24 +13,24 @@
   "githubAssets": {
     "total": 11
   },
-  "updatedAt": "2026-10-16T19:58:29Z",
+  "updatedAt": "2026-10-17T12:39:46Z",
   "packages": [
     {
       "name": "lab123/lumen-notification",
-      "desc": "Wrapper of Laravel Notification adapted to work with Lumen 5.x",
+      "desc": "Laravel Notifications wiring for Illuminate-based apps (ex-Lumen): service provider, mail/services config and artisan commands",
       "registry": "composer",
-      "downloads": 51356,
+      "downloads": 51358,
       "stars": 2,
-      "month": 289,
+      "month": 256,
       "abandoned": false
     },
     {
       "name": "lab123/aws-sns",
-      "desc": "Amazon SNS Notifications Channel for Laravel 5.3",
+      "desc": "Amazon SNS notification channels (SMS and topics) for Laravel",
       "registry": "composer",
-      "downloads": 28809,
+      "downloads": 28811,
       "stars": 32,
-      "month": 0,
+      "month": 2,
       "abandoned": false
     },
     {
@@ -55,7 +55,7 @@
       "registry": "npm",
       "downloads": 0,
       "stars": 0,
-      "version": "1.0.3"
+      "version": "1.0.4"
     }
   ],
   "releases": [
@@ -90,10 +90,10 @@
       "url": "https://www.npmjs.com/package/maestro-agent-mobile/v/1.0.3"
     },
     {
-      "name": "agent-mobile",
-      "tag": "v1.0.3",
+      "name": "maestro-agent-mobile",
+      "tag": "v1.0.4",
       "date": "2026-10-16",
-      "url": "https://github.com/jeanpfs/agent-mobile/releases/tag/v1.0.3"
+      "url": "https://www.npmjs.com/package/maestro-agent-mobile/v/1.0.4"
     }
   ],
   "repos": [
@@ -142,18 +142,18 @@
   ],
   "history": {
     "npm": [
-      947,
-      1145,
-      1198,
-      1520,
-      1668,
-      2206,
-      3104,
-      3475,
-      4083,
-      5053,
-      6796,
-      8988
+      944,
+      1142,
+      1195,
+      1517,
+      1665,
+      2203,
+      3101,
+      3472,
+      4080,
+      5050,
+      6793,
+      8985
     ],
     "stars": [
       0,
