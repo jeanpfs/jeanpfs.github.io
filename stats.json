@@ -1,11 +1,11 @@
 {
   "npm": {
-    "total": 8985,
-    "month": 3665
+    "total": 10718,
+    "month": 4625
   },
   "packagist": {
     "total": 84988,
-    "month": 490
+    "month": 470
   },
   "stars": {
     "total": 15
@@ -13,7 +13,7 @@
   "githubAssets": {
     "total": 11
   },
-  "updatedAt": "2026-10-17T12:39:46Z",
+  "updatedAt": "2026-10-18T12:57:01Z",
   "packages": [
     {
       "name": "lab123/lumen-notification",
@@ -21,7 +21,7 @@
       "registry": "composer",
       "downloads": 51358,
       "stars": 2,
-      "month": 256,
+      "month": 246,
       "abandoned": false
     },
     {
@@ -37,7 +37,7 @@
       "name": "stock-images-mcp",
       "desc": "MCP server to search and download stock images from Pexels, Unsplash, and Pixabay",
       "registry": "npm",
-      "downloads": 5775,
+      "downloads": 6655,
       "stars": 4,
       "version": "2.0.1"
     },
@@ -45,7 +45,7 @@
       "name": "xd-extract",
       "desc": "Extract SVG vectors from Adobe XD share links and .xd files, with inventory and validation.",
       "registry": "npm",
-      "downloads": 246,
+      "downloads": 578,
       "stars": 0,
       "version": "0.2.3"
     },
@@ -53,7 +53,7 @@
       "name": "maestro-agent-mobile",
       "desc": "Mobile app automation CLI for AI agents — works with any app on iOS Simulator or Android Emulator via Maestro",
       "registry": "npm",
-      "downloads": 0,
+      "downloads": 531,
       "stars": 0,
       "version": "1.0.4"
     }
@@ -142,18 +142,18 @@
   ],
   "history": {
     "npm": [
-      944,
-      1142,
-      1195,
-      1517,
-      1665,
-      2203,
-      3101,
-      3472,
-      4080,
-      5050,
-      6793,
-      8985
+      929,
+      1127,
+      1180,
+      1502,
+      1650,
+      2188,
+      3086,
+      3457,
+      4065,
+      5035,
+      6778,
+      10718
     ],
     "stars": [
       0,
