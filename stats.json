@@ -1,27 +1,27 @@
 {
   "npm": {
-    "total": 10810,
+    "total": 10806,
     "month": 5300
   },
   "packagist": {
-    "total": 84988,
-    "month": 470
+    "total": 85000,
+    "month": 482
   },
   "stars": {
     "total": 15
   },
   "githubAssets": {
-    "total": 11
+    "total": 13
   },
-  "updatedAt": "2026-10-19T16:09:04Z",
+  "updatedAt": "2026-10-20T14:03:27Z",
   "packages": [
     {
       "name": "lab123/lumen-notification",
       "desc": "Laravel Notifications wiring for Illuminate-based apps (ex-Lumen): service provider, mail/services config and artisan commands",
       "registry": "composer",
-      "downloads": 51358,
+      "downloads": 51364,
       "stars": 2,
-      "month": 246,
+      "month": 252,
       "abandoned": false
     },
     {
@@ -60,6 +60,12 @@
   ],
   "releases": [
     {
+      "name": "bossa",
+      "tag": "v0.1.2",
+      "date": "2026-10-19",
+      "url": "https://github.com/jeanpfs/bossa/releases/tag/v0.1.2"
+    },
+    {
       "name": "stock-images-mcp",
       "tag": "v2.0.1",
       "date": "2026-10-16",
@@ -88,12 +94,6 @@
       "tag": "v1.0.3",
       "date": "2026-10-16",
       "url": "https://www.npmjs.com/package/maestro-agent-mobile/v/1.0.3"
-    },
-    {
-      "name": "maestro-agent-mobile",
-      "tag": "v1.0.4",
-      "date": "2026-10-16",
-      "url": "https://www.npmjs.com/package/maestro-agent-mobile/v/1.0.4"
     }
   ],
   "repos": [
@@ -142,18 +142,18 @@
   ],
   "history": {
     "npm": [
-      923,
-      1121,
-      1174,
-      1496,
-      1644,
-      2182,
-      3080,
-      3451,
-      4059,
-      5029,
-      6772,
-      10810
+      919,
+      1117,
+      1170,
+      1492,
+      1640,
+      2178,
+      3076,
+      3447,
+      4055,
+      5025,
+      6768,
+      10806
     ],
     "stars": [
       0,
