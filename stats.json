@@ -1,27 +1,27 @@
 {
   "npm": {
-    "total": 10806,
+    "total": 10804,
     "month": 5300
   },
   "packagist": {
-    "total": 85000,
-    "month": 482
+    "total": 85003,
+    "month": 475
   },
   "stars": {
-    "total": 15
+    "total": 17
   },
   "githubAssets": {
     "total": 13
   },
-  "updatedAt": "2026-10-20T14:03:27Z",
+  "updatedAt": "2026-10-21T14:18:52Z",
   "packages": [
     {
       "name": "lab123/lumen-notification",
       "desc": "Laravel Notifications wiring for Illuminate-based apps (ex-Lumen): service provider, mail/services config and artisan commands",
       "registry": "composer",
-      "downloads": 51364,
+      "downloads": 51367,
       "stars": 2,
-      "month": 252,
+      "month": 250,
       "abandoned": false
     },
     {
@@ -38,7 +38,7 @@
       "desc": "MCP server to search and download stock images from Pexels, Unsplash, and Pixabay",
       "registry": "npm",
       "downloads": 6685,
-      "stars": 4,
+      "stars": 5,
       "version": "2.0.1"
     },
     {
@@ -135,25 +135,25 @@
     {
       "name": "bd-board",
       "desc": "A local-first Beads issue board",
-      "stars": 6,
+      "stars": 7,
       "created": "2026-06-09",
       "url": "https://github.com/jeanpfs/bd-board"
     }
   ],
   "history": {
     "npm": [
-      919,
-      1117,
-      1170,
-      1492,
-      1640,
-      2178,
-      3076,
-      3447,
-      4055,
-      5025,
-      6768,
-      10806
+      917,
+      1115,
+      1168,
+      1490,
+      1638,
+      2176,
+      3074,
+      3445,
+      4053,
+      5023,
+      6766,
+      10804
     ],
     "stars": [
       0,
@@ -167,7 +167,7 @@
       12,
       12,
       14,
-      15
+      17
     ]
   }
 }
