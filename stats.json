@@ -1,19 +1,19 @@
 {
   "npm": {
-    "total": 10804,
+    "total": 10802,
     "month": 5300
   },
   "packagist": {
     "total": 85003,
-    "month": 475
+    "month": 425
   },
   "stars": {
     "total": 17
   },
   "githubAssets": {
-    "total": 13
+    "total": 14
   },
-  "updatedAt": "2026-10-21T14:18:52Z",
+  "updatedAt": "2026-10-22T14:18:39Z",
   "packages": [
     {
       "name": "lab123/lumen-notification",
@@ -21,7 +21,7 @@
       "registry": "composer",
       "downloads": 51367,
       "stars": 2,
-      "month": 250,
+      "month": 225,
       "abandoned": false
     },
     {
@@ -142,18 +142,18 @@
   ],
   "history": {
     "npm": [
-      917,
-      1115,
-      1168,
-      1490,
-      1638,
-      2176,
-      3074,
-      3445,
-      4053,
-      5023,
-      6766,
-      10804
+      915,
+      1113,
+      1166,
+      1488,
+      1636,
+      2174,
+      3072,
+      3443,
+      4051,
+      5021,
+      6764,
+      10802
     ],
     "stars": [
       0,
