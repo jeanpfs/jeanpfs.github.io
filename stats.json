@@ -4,8 +4,8 @@
     "month": 5300
   },
   "packagist": {
-    "total": 85003,
-    "month": 425
+    "total": 85025,
+    "month": 390
   },
   "stars": {
     "total": 17
@@ -13,15 +13,15 @@
   "githubAssets": {
     "total": 14
   },
-  "updatedAt": "2026-10-22T14:18:39Z",
+  "updatedAt": "2026-10-23T14:01:40Z",
   "packages": [
     {
       "name": "lab123/lumen-notification",
       "desc": "Laravel Notifications wiring for Illuminate-based apps (ex-Lumen): service provider, mail/services config and artisan commands",
       "registry": "composer",
-      "downloads": 51367,
+      "downloads": 51378,
       "stars": 2,
-      "month": 225,
+      "month": 206,
       "abandoned": false
     },
     {
