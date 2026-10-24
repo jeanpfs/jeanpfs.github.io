@@ -1,11 +1,11 @@
 {
   "npm": {
-    "total": 10802,
-    "month": 5300
+    "total": 10881,
+    "month": 4855
   },
   "packagist": {
     "total": 85025,
-    "month": 390
+    "month": 342
   },
   "stars": {
     "total": 17
@@ -13,7 +13,7 @@
   "githubAssets": {
     "total": 14
   },
-  "updatedAt": "2026-10-23T14:01:40Z",
+  "updatedAt": "2026-10-24T13:04:03Z",
   "packages": [
     {
       "name": "lab123/lumen-notification",
@@ -21,7 +21,7 @@
       "registry": "composer",
       "downloads": 51378,
       "stars": 2,
-      "month": 206,
+      "month": 182,
       "abandoned": false
     },
     {
@@ -37,7 +37,7 @@
       "name": "stock-images-mcp",
       "desc": "MCP server to search and download stock images from Pexels, Unsplash, and Pixabay",
       "registry": "npm",
-      "downloads": 6685,
+      "downloads": 6759,
       "stars": 5,
       "version": "2.0.1"
     },
@@ -45,7 +45,7 @@
       "name": "xd-extract",
       "desc": "Extract SVG vectors from Adobe XD share links and .xd files, with inventory and validation.",
       "registry": "npm",
-      "downloads": 608,
+      "downloads": 612,
       "stars": 0,
       "version": "0.2.3"
     },
@@ -72,18 +72,6 @@
       "url": "https://www.npmjs.com/package/stock-images-mcp/v/2.0.1"
     },
     {
-      "name": "xd-extract",
-      "tag": "v0.2.2",
-      "date": "2026-10-16",
-      "url": "https://www.npmjs.com/package/xd-extract/v/0.2.2"
-    },
-    {
-      "name": "xd-extract",
-      "tag": "v0.2.3",
-      "date": "2026-10-16",
-      "url": "https://www.npmjs.com/package/xd-extract/v/0.2.3"
-    },
-    {
       "name": "maestro-agent-mobile",
       "tag": "v1.0.2",
       "date": "2026-10-16",
@@ -94,9 +82,28 @@
       "tag": "v1.0.3",
       "date": "2026-10-16",
       "url": "https://www.npmjs.com/package/maestro-agent-mobile/v/1.0.3"
+    },
+    {
+      "name": "maestro-agent-mobile",
+      "tag": "v1.0.4",
+      "date": "2026-10-16",
+      "url": "https://www.npmjs.com/package/maestro-agent-mobile/v/1.0.4"
+    },
+    {
+      "name": "xd-extract",
+      "tag": "v0.2.2",
+      "date": "2026-10-16",
+      "url": "https://www.npmjs.com/package/xd-extract/v/0.2.2"
     }
   ],
   "repos": [
+    {
+      "name": "skopry",
+      "desc": "Any window from your Mac on your Android, iPhone and iPad. Native Mac host, Android and iOS clients, no account, no server. Apache-2.0, derived from Sill.",
+      "stars": 0,
+      "created": "2026-10-24",
+      "url": "https://github.com/jeanpfs/skopry"
+    },
     {
       "name": "homebrew-tap",
       "desc": "Homebrew tap for jeanpfs' macOS tools (bossa, clipboard-screenshot)",
@@ -131,13 +138,6 @@
       "stars": 0,
       "created": "2026-09-19",
       "url": "https://github.com/jeanpfs/clipboard-screenshot"
-    },
-    {
-      "name": "bd-board",
-      "desc": "A local-first Beads issue board",
-      "stars": 7,
-      "created": "2026-06-09",
-      "url": "https://github.com/jeanpfs/bd-board"
     }
   ],
   "history": {
@@ -153,7 +153,7 @@
       4051,
       5021,
       6764,
-      10802
+      10881
     ],
     "stars": [
       0,
