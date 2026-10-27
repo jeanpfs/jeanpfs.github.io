@@ -1,11 +1,11 @@
 {
   "npm": {
-    "total": 10878,
-    "month": 4855
+    "total": 11729,
+    "month": 678
   },
   "packagist": {
-    "total": 85029,
-    "month": 295
+    "total": 85045,
+    "month": 311
   },
   "stars": {
     "total": 17
@@ -13,15 +13,15 @@
   "githubAssets": {
     "total": 14
   },
-  "updatedAt": "2026-10-26T15:47:36Z",
+  "updatedAt": "2026-10-27T15:05:36Z",
   "packages": [
     {
       "name": "lab123/lumen-notification",
       "desc": "Laravel Notifications wiring for Illuminate-based apps (ex-Lumen): service provider, mail/services config and artisan commands",
       "registry": "composer",
-      "downloads": 51382,
+      "downloads": 51388,
       "stars": 2,
-      "month": 160,
+      "month": 166,
       "abandoned": false
     },
     {
@@ -37,7 +37,7 @@
       "name": "stock-images-mcp",
       "desc": "MCP server to search and download stock images from Pexels, Unsplash, and Pixabay",
       "registry": "npm",
-      "downloads": 6759,
+      "downloads": 7508,
       "stars": 5,
       "version": "2.0.1"
     },
@@ -45,7 +45,7 @@
       "name": "xd-extract",
       "desc": "Extract SVG vectors from Adobe XD share links and .xd files, with inventory and validation.",
       "registry": "npm",
-      "downloads": 612,
+      "downloads": 644,
       "stars": 0,
       "version": "0.2.3"
     },
@@ -53,7 +53,7 @@
       "name": "maestro-agent-mobile",
       "desc": "Mobile app automation CLI for AI agents — works with any app on iOS Simulator or Android Emulator via Maestro",
       "registry": "npm",
-      "downloads": 566,
+      "downloads": 594,
       "stars": 0,
       "version": "1.0.4"
     }
@@ -149,11 +149,11 @@
       1633,
       2171,
       3069,
-      3440,
-      4048,
-      5018,
-      6761,
-      10878
+      3550,
+      4357,
+      5327,
+      7070,
+      11729
     ],
     "stars": [
       0,
