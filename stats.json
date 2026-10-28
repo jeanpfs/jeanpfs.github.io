@@ -1,27 +1,27 @@
 {
   "npm": {
-    "total": 11729,
-    "month": 678
+    "total": 11864,
+    "month": 5384
   },
   "packagist": {
-    "total": 85045,
-    "month": 311
+    "total": 85048,
+    "month": 286
   },
   "stars": {
-    "total": 17
+    "total": 19
   },
   "githubAssets": {
-    "total": 14
+    "total": 15
   },
-  "updatedAt": "2026-10-27T15:05:36Z",
+  "updatedAt": "2026-10-28T15:42:01Z",
   "packages": [
     {
       "name": "lab123/lumen-notification",
       "desc": "Laravel Notifications wiring for Illuminate-based apps (ex-Lumen): service provider, mail/services config and artisan commands",
       "registry": "composer",
-      "downloads": 51388,
+      "downloads": 51391,
       "stars": 2,
-      "month": 166,
+      "month": 154,
       "abandoned": false
     },
     {
@@ -37,7 +37,7 @@
       "name": "stock-images-mcp",
       "desc": "MCP server to search and download stock images from Pexels, Unsplash, and Pixabay",
       "registry": "npm",
-      "downloads": 7508,
+      "downloads": 7632,
       "stars": 5,
       "version": "2.0.1"
     },
@@ -45,7 +45,7 @@
       "name": "xd-extract",
       "desc": "Extract SVG vectors from Adobe XD share links and .xd files, with inventory and validation.",
       "registry": "npm",
-      "downloads": 644,
+      "downloads": 650,
       "stars": 0,
       "version": "0.2.3"
     },
@@ -53,7 +53,7 @@
       "name": "maestro-agent-mobile",
       "desc": "Mobile app automation CLI for AI agents — works with any app on iOS Simulator or Android Emulator via Maestro",
       "registry": "npm",
-      "downloads": 594,
+      "downloads": 597,
       "stars": 0,
       "version": "1.0.4"
     }
@@ -72,6 +72,18 @@
       "url": "https://www.npmjs.com/package/stock-images-mcp/v/2.0.1"
     },
     {
+      "name": "xd-extract",
+      "tag": "v0.2.2",
+      "date": "2026-10-16",
+      "url": "https://www.npmjs.com/package/xd-extract/v/0.2.2"
+    },
+    {
+      "name": "xd-extract",
+      "tag": "v0.2.3",
+      "date": "2026-10-16",
+      "url": "https://www.npmjs.com/package/xd-extract/v/0.2.3"
+    },
+    {
       "name": "maestro-agent-mobile",
       "tag": "v1.0.2",
       "date": "2026-10-16",
@@ -82,18 +94,6 @@
       "tag": "v1.0.3",
       "date": "2026-10-16",
       "url": "https://www.npmjs.com/package/maestro-agent-mobile/v/1.0.3"
-    },
-    {
-      "name": "maestro-agent-mobile",
-      "tag": "v1.0.4",
-      "date": "2026-10-16",
-      "url": "https://www.npmjs.com/package/maestro-agent-mobile/v/1.0.4"
-    },
-    {
-      "name": "xd-extract",
-      "tag": "v0.2.2",
-      "date": "2026-10-16",
-      "url": "https://www.npmjs.com/package/xd-extract/v/0.2.2"
     }
   ],
   "repos": [
@@ -153,7 +153,7 @@
       4357,
       5327,
       7070,
-      11729
+      11864
     ],
     "stars": [
       0,
@@ -167,7 +167,7 @@
       12,
       12,
       14,
-      17
+      19
     ]
   }
 }
