@@ -1,27 +1,27 @@
 {
   "npm": {
-    "total": 11864,
-    "month": 5384
+    "total": 12335,
+    "month": 5554
   },
   "packagist": {
-    "total": 85048,
-    "month": 286
+    "total": 85050,
+    "month": 251
   },
   "stars": {
-    "total": 19
+    "total": 25
   },
   "githubAssets": {
     "total": 15
   },
-  "updatedAt": "2026-10-28T15:42:01Z",
+  "updatedAt": "2026-10-29T15:48:29Z",
   "packages": [
     {
       "name": "lab123/lumen-notification",
       "desc": "Laravel Notifications wiring for Illuminate-based apps (ex-Lumen): service provider, mail/services config and artisan commands",
       "registry": "composer",
-      "downloads": 51391,
+      "downloads": 51392,
       "stars": 2,
-      "month": 154,
+      "month": 133,
       "abandoned": false
     },
     {
@@ -37,7 +37,7 @@
       "name": "stock-images-mcp",
       "desc": "MCP server to search and download stock images from Pexels, Unsplash, and Pixabay",
       "registry": "npm",
-      "downloads": 7632,
+      "downloads": 8091,
       "stars": 5,
       "version": "2.0.1"
     },
@@ -45,15 +45,15 @@
       "name": "xd-extract",
       "desc": "Extract SVG vectors from Adobe XD share links and .xd files, with inventory and validation.",
       "registry": "npm",
-      "downloads": 650,
-      "stars": 0,
+      "downloads": 655,
+      "stars": 1,
       "version": "0.2.3"
     },
     {
       "name": "maestro-agent-mobile",
       "desc": "Mobile app automation CLI for AI agents — works with any app on iOS Simulator or Android Emulator via Maestro",
       "registry": "npm",
-      "downloads": 597,
+      "downloads": 605,
       "stars": 0,
       "version": "1.0.4"
     }
@@ -72,18 +72,6 @@
       "url": "https://www.npmjs.com/package/stock-images-mcp/v/2.0.1"
     },
     {
-      "name": "xd-extract",
-      "tag": "v0.2.2",
-      "date": "2026-10-16",
-      "url": "https://www.npmjs.com/package/xd-extract/v/0.2.2"
-    },
-    {
-      "name": "xd-extract",
-      "tag": "v0.2.3",
-      "date": "2026-10-16",
-      "url": "https://www.npmjs.com/package/xd-extract/v/0.2.3"
-    },
-    {
       "name": "maestro-agent-mobile",
       "tag": "v1.0.2",
       "date": "2026-10-16",
@@ -94,27 +82,39 @@
       "tag": "v1.0.3",
       "date": "2026-10-16",
       "url": "https://www.npmjs.com/package/maestro-agent-mobile/v/1.0.3"
+    },
+    {
+      "name": "maestro-agent-mobile",
+      "tag": "v1.0.4",
+      "date": "2026-10-16",
+      "url": "https://www.npmjs.com/package/maestro-agent-mobile/v/1.0.4"
+    },
+    {
+      "name": "xd-extract",
+      "tag": "v0.2.2",
+      "date": "2026-10-16",
+      "url": "https://www.npmjs.com/package/xd-extract/v/0.2.2"
     }
   ],
   "repos": [
     {
       "name": "skopry",
       "desc": "Any window from your Mac on your Android, iPhone and iPad. Native Mac host, Android and iOS clients, no account, no server. Apache-2.0, derived from Sill.",
-      "stars": 0,
+      "stars": 1,
       "created": "2026-10-24",
       "url": "https://github.com/jeanpfs/skopry"
     },
     {
       "name": "homebrew-tap",
       "desc": "Homebrew tap for jeanpfs' macOS tools (bossa, clipboard-screenshot)",
-      "stars": 0,
+      "stars": 1,
       "created": "2026-10-16",
       "url": "https://github.com/jeanpfs/homebrew-tap"
     },
     {
       "name": "bossa",
       "desc": "Unofficial native macOS menu-bar app for Bose QC Ultra headphones (SwiftUI + Liquid Glass, Rust core)",
-      "stars": 0,
+      "stars": 1,
       "created": "2026-10-14",
       "url": "https://github.com/jeanpfs/bossa"
     },
@@ -128,7 +128,7 @@
     {
       "name": "xd-extract",
       "desc": "Extract SVG vector art from Adobe XD share links and .xd files: inventory, export and validate. CLI plus agent skills.",
-      "stars": 0,
+      "stars": 1,
       "created": "2026-10-02",
       "url": "https://github.com/jeanpfs/xd-extract"
     },
@@ -142,18 +142,18 @@
   ],
   "history": {
     "npm": [
-      912,
-      1110,
-      1163,
-      1485,
-      1633,
-      2171,
-      3069,
-      3550,
-      4357,
-      5327,
-      7070,
-      11864
+      910,
+      1108,
+      1161,
+      1483,
+      1631,
+      2169,
+      3067,
+      3548,
+      4355,
+      5325,
+      7068,
+      12335
     ],
     "stars": [
       0,
@@ -167,7 +167,7 @@
       12,
       12,
       14,
-      19
+      25
     ]
   }
 }
