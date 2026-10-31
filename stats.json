@@ -5,7 +5,7 @@
   },
   "packagist": {
     "total": 85050,
-    "month": 230
+    "month": 212
   },
   "stars": {
     "total": 25
@@ -13,7 +13,7 @@
   "githubAssets": {
     "total": 16
   },
-  "updatedAt": "2026-10-30T15:29:43Z",
+  "updatedAt": "2026-10-31T14:58:12Z",
   "packages": [
     {
       "name": "lab123/lumen-notification",
@@ -21,7 +21,7 @@
       "registry": "composer",
       "downloads": 51392,
       "stars": 2,
-      "month": 121,
+      "month": 112,
       "abandoned": false
     },
     {
@@ -72,6 +72,18 @@
       "url": "https://www.npmjs.com/package/stock-images-mcp/v/2.0.1"
     },
     {
+      "name": "xd-extract",
+      "tag": "v0.2.2",
+      "date": "2026-10-16",
+      "url": "https://www.npmjs.com/package/xd-extract/v/0.2.2"
+    },
+    {
+      "name": "xd-extract",
+      "tag": "v0.2.3",
+      "date": "2026-10-16",
+      "url": "https://www.npmjs.com/package/xd-extract/v/0.2.3"
+    },
+    {
       "name": "maestro-agent-mobile",
       "tag": "v1.0.2",
       "date": "2026-10-16",
@@ -82,18 +94,6 @@
       "tag": "v1.0.3",
       "date": "2026-10-16",
       "url": "https://www.npmjs.com/package/maestro-agent-mobile/v/1.0.3"
-    },
-    {
-      "name": "maestro-agent-mobile",
-      "tag": "v1.0.4",
-      "date": "2026-10-16",
-      "url": "https://www.npmjs.com/package/maestro-agent-mobile/v/1.0.4"
-    },
-    {
-      "name": "xd-extract",
-      "tag": "v0.2.2",
-      "date": "2026-10-16",
-      "url": "https://www.npmjs.com/package/xd-extract/v/0.2.2"
     }
   ],
   "repos": [
