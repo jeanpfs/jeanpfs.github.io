@@ -1,11 +1,11 @@
 {
   "npm": {
-    "total": 12854,
-    "month": 5527
+    "total": 13177,
+    "month": 5791
   },
   "packagist": {
     "total": 85051,
-    "month": 188
+    "month": 130
   },
   "stars": {
     "total": 25
@@ -13,7 +13,7 @@
   "githubAssets": {
     "total": 16
   },
-  "updatedAt": "2026-11-03T16:48:15Z",
+  "updatedAt": "2026-11-04T16:48:00Z",
   "packages": [
     {
       "name": "lab123/lumen-notification",
@@ -21,7 +21,7 @@
       "registry": "composer",
       "downloads": 51393,
       "stars": 2,
-      "month": 100,
+      "month": 71,
       "abandoned": false
     },
     {
@@ -37,7 +37,7 @@
       "name": "stock-images-mcp",
       "desc": "MCP server to search and download stock images from Pexels, Unsplash, and Pixabay",
       "registry": "npm",
-      "downloads": 8490,
+      "downloads": 8810,
       "stars": 5,
       "version": "2.0.1"
     },
@@ -45,7 +45,7 @@
       "name": "xd-extract",
       "desc": "Extract SVG vectors from Adobe XD share links and .xd files, with inventory and validation.",
       "registry": "npm",
-      "downloads": 690,
+      "downloads": 692,
       "stars": 1,
       "version": "0.2.3"
     },
@@ -150,10 +150,10 @@
       3066,
       3547,
       4365,
-      5335,
-      7078,
-      12585,
-      12854
+      5341,
+      7084,
+      12591,
+      13177
     ],
     "stars": [
       0,
