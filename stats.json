@@ -1,11 +1,11 @@
 {
   "npm": {
-    "total": 13177,
-    "month": 5791
+    "total": 13220,
+    "month": 5349
   },
   "packagist": {
-    "total": 85051,
-    "month": 130
+    "total": 85061,
+    "month": 122
   },
   "stars": {
     "total": 25
@@ -13,15 +13,15 @@
   "githubAssets": {
     "total": 16
   },
-  "updatedAt": "2026-11-04T16:48:00Z",
+  "updatedAt": "2026-11-05T17:04:08Z",
   "packages": [
     {
       "name": "lab123/lumen-notification",
       "desc": "Laravel Notifications wiring for Illuminate-based apps (ex-Lumen): service provider, mail/services config and artisan commands",
       "registry": "composer",
-      "downloads": 51393,
+      "downloads": 51398,
       "stars": 2,
-      "month": 71,
+      "month": 67,
       "abandoned": false
     },
     {
@@ -37,7 +37,7 @@
       "name": "stock-images-mcp",
       "desc": "MCP server to search and download stock images from Pexels, Unsplash, and Pixabay",
       "registry": "npm",
-      "downloads": 8810,
+      "downloads": 8836,
       "stars": 5,
       "version": "2.0.1"
     },
@@ -45,7 +45,7 @@
       "name": "xd-extract",
       "desc": "Extract SVG vectors from Adobe XD share links and .xd files, with inventory and validation.",
       "registry": "npm",
-      "downloads": 692,
+      "downloads": 706,
       "stars": 1,
       "version": "0.2.3"
     },
@@ -72,18 +72,6 @@
       "url": "https://www.npmjs.com/package/stock-images-mcp/v/2.0.1"
     },
     {
-      "name": "xd-extract",
-      "tag": "v0.2.2",
-      "date": "2026-10-16",
-      "url": "https://www.npmjs.com/package/xd-extract/v/0.2.2"
-    },
-    {
-      "name": "xd-extract",
-      "tag": "v0.2.3",
-      "date": "2026-10-16",
-      "url": "https://www.npmjs.com/package/xd-extract/v/0.2.3"
-    },
-    {
       "name": "maestro-agent-mobile",
       "tag": "v1.0.2",
       "date": "2026-10-16",
@@ -94,6 +82,18 @@
       "tag": "v1.0.3",
       "date": "2026-10-16",
       "url": "https://www.npmjs.com/package/maestro-agent-mobile/v/1.0.3"
+    },
+    {
+      "name": "maestro-agent-mobile",
+      "tag": "v1.0.4",
+      "date": "2026-10-16",
+      "url": "https://www.npmjs.com/package/maestro-agent-mobile/v/1.0.4"
+    },
+    {
+      "name": "xd-extract",
+      "tag": "v0.2.2",
+      "date": "2026-10-16",
+      "url": "https://www.npmjs.com/package/xd-extract/v/0.2.2"
     }
   ],
   "repos": [
@@ -153,7 +153,7 @@
       5341,
       7084,
       12591,
-      13177
+      13220
     ],
     "stars": [
       0,
