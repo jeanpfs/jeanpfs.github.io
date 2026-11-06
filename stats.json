@@ -1,19 +1,19 @@
 {
   "npm": {
-    "total": 13220,
-    "month": 5349
+    "total": 13450,
+    "month": 5519
   },
   "packagist": {
     "total": 85061,
-    "month": 122
+    "month": 98
   },
   "stars": {
-    "total": 25
+    "total": 27
   },
   "githubAssets": {
     "total": 16
   },
-  "updatedAt": "2026-11-05T17:04:08Z",
+  "updatedAt": "2026-11-06T16:33:55Z",
   "packages": [
     {
       "name": "lab123/lumen-notification",
@@ -21,7 +21,7 @@
       "registry": "composer",
       "downloads": 51398,
       "stars": 2,
-      "month": 67,
+      "month": 55,
       "abandoned": false
     },
     {
@@ -29,7 +29,7 @@
       "desc": "Amazon SNS notification channels (SMS and topics) for Laravel",
       "registry": "composer",
       "downloads": 28811,
-      "stars": 32,
+      "stars": 31,
       "month": 2,
       "abandoned": false
     },
@@ -37,7 +37,7 @@
       "name": "stock-images-mcp",
       "desc": "MCP server to search and download stock images from Pexels, Unsplash, and Pixabay",
       "registry": "npm",
-      "downloads": 8836,
+      "downloads": 9051,
       "stars": 5,
       "version": "2.0.1"
     },
@@ -45,7 +45,7 @@
       "name": "xd-extract",
       "desc": "Extract SVG vectors from Adobe XD share links and .xd files, with inventory and validation.",
       "registry": "npm",
-      "downloads": 706,
+      "downloads": 718,
       "stars": 1,
       "version": "0.2.3"
     },
@@ -53,7 +53,7 @@
       "name": "maestro-agent-mobile",
       "desc": "Mobile app automation CLI for AI agents — works with any app on iOS Simulator or Android Emulator via Maestro",
       "registry": "npm",
-      "downloads": 619,
+      "downloads": 623,
       "stars": 0,
       "version": "1.0.4"
     }
@@ -121,7 +121,7 @@
     {
       "name": "lumen",
       "desc": "Lumen: cross-platform controller for Bluetooth LE LED strips (Rust core + Tauri + React)",
-      "stars": 0,
+      "stars": 1,
       "created": "2026-10-07",
       "url": "https://github.com/jeanpfs/lumen"
     },
@@ -142,18 +142,18 @@
   ],
   "history": {
     "npm": [
-      1100,
-      1153,
-      1482,
-      1630,
-      2168,
-      3066,
-      3547,
-      4365,
-      5341,
-      7084,
-      12591,
-      13220
+      1095,
+      1148,
+      1477,
+      1625,
+      2163,
+      3061,
+      3542,
+      4360,
+      5336,
+      7144,
+      12651,
+      13450
     ],
     "stars": [
       0,
@@ -167,7 +167,7 @@
       12,
       14,
       25,
-      25
+      27
     ]
   }
 }
