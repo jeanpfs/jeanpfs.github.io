@@ -126,7 +126,7 @@ try:
 except (PermissionError, urllib.error.HTTPError):
     star_history = stars_from_previous(sys.argv[1] if len(sys.argv) > 1 else "stats.json")
 by_name = {r["name"]: r for r in repos}
-for p in npm_pkgs:  # stars do repo homônimo
+for p in npm_pkgs + comp_pkgs:  # stars do repo homônimo no GitHub (não os favers do Packagist)
     p["stars"] = by_name.get(p["name"].split("/")[-1], {}).get("stargazers_count", 0)
 
 # ---- releases (npm + GitHub) ----

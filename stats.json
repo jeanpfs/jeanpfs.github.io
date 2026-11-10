@@ -13,17 +13,8 @@
   "githubAssets": {
     "total": 18
   },
-  "updatedAt": "2026-11-10T21:26:42Z",
+  "updatedAt": "2026-11-10T21:42:09Z",
   "packages": [
-    {
-      "name": "lab123/aws-sns",
-      "desc": "Amazon SNS notification channels (SMS and topics) for Laravel",
-      "registry": "composer",
-      "downloads": 28825,
-      "stars": 31,
-      "month": 16,
-      "abandoned": false
-    },
     {
       "name": "bd-board",
       "desc": "A local-first Beads issue board",
@@ -49,13 +40,20 @@
       "url": "https://github.com/jeanpfs/stock-images"
     },
     {
-      "name": "lab123/lumen-notification",
-      "desc": "Laravel Notifications wiring for Illuminate-based apps (ex-Lumen): service provider, mail/services config and artisan commands",
-      "registry": "composer",
-      "downloads": 51398,
-      "stars": 2,
-      "month": 44,
-      "abandoned": false
+      "name": "xd-extract",
+      "desc": "Extract SVG vectors from Adobe XD share links and .xd files, with inventory and validation.",
+      "registry": "npm",
+      "downloads": 751,
+      "stars": 1,
+      "version": "0.2.3"
+    },
+    {
+      "name": "bossa",
+      "desc": "Unofficial native macOS menu-bar app for Bose QC Ultra headphones (SwiftUI + Liquid Glass, Rust core)",
+      "registry": "github",
+      "downloads": 12,
+      "stars": 1,
+      "url": "https://github.com/jeanpfs/bossa"
     }
   ],
   "releases": [
