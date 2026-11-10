@@ -140,9 +140,11 @@ for p in npm_pkgs:
             releases.append({"name": p["name"], "tag": "v" + v, "date": t[:10],
                              "url": f"https://www.npmjs.com/package/{p['name']}/v/{v}"})
 gh_asset_downloads = 0  # downloads dos binários anexados às releases (apps)
+repo_downloads = {}
 for r in repos:
     all_rel = pages(f"https://api.github.com/repos/{r['full_name']}/releases", auth=True)
-    gh_asset_downloads += sum(a["download_count"] for rel in all_rel for a in rel["assets"])
+    repo_downloads[r["name"]] = sum(a["download_count"] for rel in all_rel for a in rel["assets"])
+    gh_asset_downloads += repo_downloads[r["name"]]
     for rel in all_rel[:3]:
         releases.append({"name": r["name"], "tag": rel["tag_name"], "date": rel["published_at"][:10], "url": rel["html_url"]})
 seen, uniq = set(), []
@@ -155,13 +157,20 @@ for r in sorted(releases, key=lambda x: x["date"], reverse=True):
 recent = sorted((r for r in repos if r["name"] not in GH_USERS and not r["name"].endswith(".github.io")
                  and not r["archived"]), key=lambda r: r["created_at"], reverse=True)[:6]
 
+# repos com stars que não são pacote publicado entram no ranking como "github"
+pkg_names = {p["name"].split("/")[-1] for p in npm_pkgs + comp_pkgs}
+gh_pkgs = [{"name": r["name"], "desc": r["description"] or "", "registry": "github",
+            "downloads": repo_downloads.get(r["name"], 0), "stars": r["stargazers_count"], "url": r["html_url"]}
+           for r in repos if r["name"] not in pkg_names and r["name"] not in GH_USERS
+           and not r["name"].endswith(".github.io") and not r["archived"] and r["stargazers_count"]]
+
 out = {
     "npm": {"total": npm_total, "month": npm_month},
     "packagist": {"total": comp_total, "month": comp_month},
     "stars": {"total": stars_total},
     "githubAssets": {"total": gh_asset_downloads},
     "updatedAt": NOW.strftime("%Y-%m-%dT%H:%M:%SZ"),
-    "packages": [p for p in sorted(npm_pkgs + comp_pkgs, key=lambda p: -p["downloads"])
+    "packages": [p for p in sorted(npm_pkgs + comp_pkgs + gh_pkgs, key=lambda p: (-p["stars"], -p["downloads"]))
                  if p["name"] not in HIDE and p["desc"] and not p.get("abandoned")][:5],
     "releases": uniq[:6],
     "repos": [{"name": r["name"], "desc": r["description"] or "", "stars": r["stargazers_count"],
