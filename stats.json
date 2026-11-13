@@ -1,6 +1,6 @@
 {
   "npm": {
-    "total": 14695,
+    "total": 14692,
     "month": 5369
   },
   "packagist": {
@@ -11,15 +11,15 @@
     "total": 30
   },
   "githubAssets": {
-    "total": 19
+    "total": 28
   },
-  "updatedAt": "2026-11-12T17:18:50Z",
+  "updatedAt": "2026-11-13T03:09:20Z",
   "packages": [
     {
       "name": "bd-board",
       "desc": "A local-first Beads issue board",
       "registry": "github",
-      "downloads": 6,
+      "downloads": 15,
       "stars": 11,
       "url": "https://github.com/jeanpfs/bd-board"
     },
@@ -58,6 +58,12 @@
   ],
   "releases": [
     {
+      "name": "bd-board",
+      "tag": "v0.2.0",
+      "date": "2026-11-12",
+      "url": "https://github.com/jeanpfs/bd-board/releases/tag/v0.2.0"
+    },
+    {
       "name": "bossa",
       "tag": "v0.1.2",
       "date": "2026-10-19",
@@ -86,12 +92,6 @@
       "tag": "v1.0.4",
       "date": "2026-10-16",
       "url": "https://www.npmjs.com/package/maestro-agent-mobile/v/1.0.4"
-    },
-    {
-      "name": "xd-extract",
-      "tag": "v0.2.2",
-      "date": "2026-10-16",
-      "url": "https://www.npmjs.com/package/xd-extract/v/0.2.2"
     }
   ],
   "repos": [
@@ -140,18 +140,18 @@
   ],
   "history": {
     "npm": [
-      1085,
-      1138,
-      1467,
-      1615,
-      2153,
-      3051,
-      3532,
-      4350,
-      5326,
-      7134,
-      12965,
-      14695
+      1082,
+      1135,
+      1464,
+      1612,
+      2150,
+      3048,
+      3529,
+      4347,
+      5323,
+      7131,
+      12962,
+      14692
     ],
     "stars": [
       0,
