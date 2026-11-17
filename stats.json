@@ -1,25 +1,25 @@
 {
   "npm": {
-    "total": 15045,
-    "month": 4336
+    "total": 15133,
+    "month": 3798
   },
   "packagist": {
-    "total": 85097,
-    "month": 109
+    "total": 85102,
+    "month": 114
   },
   "stars": {
     "total": 31
   },
   "githubAssets": {
-    "total": 29
+    "total": 30
   },
-  "updatedAt": "2026-11-16T19:12:45Z",
+  "updatedAt": "2026-11-17T18:06:01Z",
   "packages": [
     {
       "name": "bd-board",
       "desc": "A local-first Beads issue board",
       "registry": "github",
-      "downloads": 16,
+      "downloads": 17,
       "stars": 12,
       "url": "https://github.com/jeanpfs/bd-board"
     },
@@ -27,7 +27,7 @@
       "name": "stock-images-mcp",
       "desc": "MCP server to search and download stock images from Pexels, Unsplash, and Pixabay",
       "registry": "npm",
-      "downloads": 10514,
+      "downloads": 10592,
       "stars": 6,
       "version": "2.0.1"
     },
@@ -43,7 +43,7 @@
       "name": "xd-extract",
       "desc": "Extract SVG vectors from Adobe XD share links and .xd files, with inventory and validation.",
       "registry": "npm",
-      "downloads": 793,
+      "downloads": 800,
       "stars": 1,
       "version": "0.2.3"
     },
@@ -151,7 +151,7 @@
       5323,
       7131,
       12962,
-      15045
+      15133
     ],
     "stars": [
       0,
