@@ -1,11 +1,11 @@
 {
   "npm": {
-    "total": 15595,
-    "month": 4064
+    "total": 15627,
+    "month": 4033
   },
   "packagist": {
     "total": 85103,
-    "month": 100
+    "month": 86
   },
   "stars": {
     "total": 31
@@ -13,7 +13,7 @@
   "githubAssets": {
     "total": 31
   },
-  "updatedAt": "2026-11-20T17:29:25Z",
+  "updatedAt": "2026-11-21T16:34:19Z",
   "packages": [
     {
       "name": "bd-board",
@@ -27,7 +27,7 @@
       "name": "stock-images-mcp",
       "desc": "MCP server to search and download stock images from Pexels, Unsplash, and Pixabay",
       "registry": "npm",
-      "downloads": 11025,
+      "downloads": 11051,
       "stars": 6,
       "version": "2.0.1"
     },
@@ -43,7 +43,7 @@
       "name": "xd-extract",
       "desc": "Extract SVG vectors from Adobe XD share links and .xd files, with inventory and validation.",
       "registry": "npm",
-      "downloads": 810,
+      "downloads": 812,
       "stars": 1,
       "version": "0.2.3"
     },
@@ -76,22 +76,22 @@
       "url": "https://www.npmjs.com/package/stock-images-mcp/v/2.0.1"
     },
     {
+      "name": "xd-extract",
+      "tag": "v0.2.2",
+      "date": "2026-10-16",
+      "url": "https://www.npmjs.com/package/xd-extract/v/0.2.2"
+    },
+    {
+      "name": "xd-extract",
+      "tag": "v0.2.3",
+      "date": "2026-10-16",
+      "url": "https://www.npmjs.com/package/xd-extract/v/0.2.3"
+    },
+    {
       "name": "maestro-agent-mobile",
       "tag": "v1.0.2",
       "date": "2026-10-16",
       "url": "https://www.npmjs.com/package/maestro-agent-mobile/v/1.0.2"
-    },
-    {
-      "name": "maestro-agent-mobile",
-      "tag": "v1.0.3",
-      "date": "2026-10-16",
-      "url": "https://www.npmjs.com/package/maestro-agent-mobile/v/1.0.3"
-    },
-    {
-      "name": "maestro-agent-mobile",
-      "tag": "v1.0.4",
-      "date": "2026-10-16",
-      "url": "https://www.npmjs.com/package/maestro-agent-mobile/v/1.0.4"
     }
   ],
   "repos": [
@@ -151,7 +151,7 @@
       5322,
       7229,
       13060,
-      15595
+      15627
     ],
     "stars": [
       0,
