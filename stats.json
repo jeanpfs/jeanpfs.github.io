@@ -1,11 +1,11 @@
 {
   "npm": {
-    "total": 15627,
-    "month": 4033
+    "total": 15730,
+    "month": 4057
   },
   "packagist": {
-    "total": 85103,
-    "month": 86
+    "total": 85113,
+    "month": 88
   },
   "stars": {
     "total": 31
@@ -13,7 +13,7 @@
   "githubAssets": {
     "total": 31
   },
-  "updatedAt": "2026-11-21T16:34:19Z",
+  "updatedAt": "2026-11-22T16:51:23Z",
   "packages": [
     {
       "name": "bd-board",
@@ -27,7 +27,7 @@
       "name": "stock-images-mcp",
       "desc": "MCP server to search and download stock images from Pexels, Unsplash, and Pixabay",
       "registry": "npm",
-      "downloads": 11051,
+      "downloads": 11151,
       "stars": 6,
       "version": "2.0.1"
     },
@@ -43,7 +43,7 @@
       "name": "xd-extract",
       "desc": "Extract SVG vectors from Adobe XD share links and .xd files, with inventory and validation.",
       "registry": "npm",
-      "downloads": 812,
+      "downloads": 814,
       "stars": 1,
       "version": "0.2.3"
     },
@@ -151,7 +151,7 @@
       5322,
       7229,
       13060,
-      15627
+      15730
     ],
     "stars": [
       0,
